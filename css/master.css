@@ -1,0 +1,190 @@
+/* Variables */
+/* Mixins */
+/* General Styling */
+html, body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* Hero Section Styling */
+.hero {
+  position: relative;
+  padding: 40px 0 0;
+  min-height: 599px;
+  background: url(img/hero-bg.jpg) no-repeat center bottom;
+  background-size: cover;
+}
+
+.hero__comingSoonBanner {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hero__mainBanner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  -webkit-transform: translate(-50%, -50%) rotate(15deg);
+  -ms-transform: translate(-50%, -50%) rotate(15deg);
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+.hero__mainBanner__row {
+  padding: 7px 0;
+}
+.hero__mainBanner__row > img {
+  display: inline-block;
+  margin-right: -7px;
+}
+.hero__mainBanner__row > ul {
+  display: inline-block;
+  margin-top: -5px;
+  text-align: left;
+}
+.hero__mainBanner__row > ul > li {
+  display: block;
+  margin-top: 5px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.hero__mainBanner__row--alignRight {
+  text-align: right;
+}
+.hero__mainBanner__row__arrowWrapper {
+  display: inline-block;
+  padding: 28px 47px;
+}
+
+.hero__credits {
+  position: absolute;
+  bottom: 0;
+  right: 61px;
+}
+.hero__credits > ul {
+  margin-top: -5px;
+  font-size: 0;
+}
+.hero__credits > ul > li {
+  display: block;
+  margin-top: 5px;
+}
+
+/* Arrow Button Styling */
+.arrowButton {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url(img/arrow-button.png) no-repeat;
+  border: none;
+}
+.arrowButton:hover {
+  cursor: pointer;
+}
+
+/* Social Menu Styling */
+.socialMenu {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+.socialMenu > ul {
+  list-style-type: none;
+  margin-left: -10px;
+  font-size: 0;
+}
+.socialMenu > ul > li {
+  display: inline-block;
+  margin-left: 10px;
+  width: 16px;
+  height: 15px;
+}
+
+.socialMenu__icon {
+  display: block;
+  width: 19px;
+  height: 16px;
+  background-image: url(img/social-icons-sprite.png);
+}
+
+.socialMenu__icon--twitter {
+  background-position: 0 0;
+}
+
+.socialMenu__icon--facebook {
+  background-position: -16px;
+}
+
+.socialMenu__icon--instagram {
+  background-position: 0 -32px;
+}
+
+/* Signup Form Styling */
+.signuForm {
+  display: block;
+  position: relative;
+  padding: 0 50px;
+  width: 100%;
+  max-width: 635px;
+  height: 44px;
+  background: url(img/signup-form-bg.jpg) repeat-y top left;
+}
+.signuForm__label {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 44px;
+  color: #fff;
+}
+.signuForm__label::after {
+  content: '|';
+  margin-left: 15px;
+  opacity: 0.3;
+}
+.signuForm__emailInput {
+  height: 44px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  background: transparent;
+}
+.signuForm__submitButton {
+  position: absolute;
+  margin-left: -2px;
+  top: 0;
+  left: 100%;
+}
+.signuForm__submitButton::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -22px;
+  width: 0;
+  height: 0;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 22px solid #0f0;
+  opacity: 0.6;
+}
+.signuForm__submitButton > input[type="submit"] {
+  padding: 0 20px;
+  height: 44px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  background: rgba(0, 255, 0, 0.6);
+  text-transform: uppercase;
+}
+.signuForm__submitButton > input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=master.css.map */
