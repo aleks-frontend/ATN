@@ -1,5 +1,9 @@
 /* Variables */
 $default-text-color: #000730;
+$default-text-size: 24px;
+
+$default-green-color: #0f0;
+$default-purple-color: #9013FE;
 
 /* Mixins */
 @mixin prefix($property, $value, $prefixes: ()) {
@@ -10,17 +14,34 @@ $default-text-color: #000730;
   #{$property}: $value;
 }
 
+/* Adding Fonts */
+
+@font-face {
+    font-family: 'brownregular';
+    src: url('fonts/brown-regular-webfont.woff2') format('woff2'),
+         url('fonts/brown-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* General Styling */
 
 html, body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'brownregular';
 }
 
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
+p {
+	margin: 50px 0;
+	font-size: $default-text-size;
+	font-weight: 700;
+	line-height: 35px;
+	color: $default-text-color;
+}
 
 /* Hero Section Styling */
 
@@ -220,4 +241,118 @@ html, body {
 			}
 		}
 	}
+}
+
+/* Home Text Section Styling */
+
+.homeTextContent {
+	margin: 100px auto;
+	width: 633px;
+
+	&--text-center {
+		text-align: center;
+	}
+}
+
+/* Default Links Styling */
+
+.defaultLink {
+	font-weight: 700;
+	text-decoration: none;
+
+	&--green {
+		color: #0f0;
+	}
+
+	&--purple {
+		color: $default-purple-color;
+	}
+}
+
+a[data-tooltip] {
+	position: relative;
+}
+
+a[data-tooltip]::before {
+	content: attr(data-tooltip);
+	position: absolute;
+	display: none;
+	font-size: 12px;
+	color: #000;
+	line-height: 20px;
+	max-width: 240px;
+	padding: 14px 24px 18px;
+	bottom: 100%;
+	left: -10px;
+	border: 3px solid #0f0;
+	border-radius: 8px;
+	background: #fff;
+	text-align: left;
+}
+
+a[data-tooltip-color="green"]::before {
+	border-color: #0f0;
+}
+
+a[data-tooltip-color="purple"]::before {
+	border-color: $default-purple-color;
+}
+
+a[data-tooltip]:hover::before {
+	display: block;
+}
+
+/* Three Columns Grid Styling */
+
+.threeColGrid {
+	margin-top: -97px;
+	margin-left: -28px;
+	font-size: 0;
+
+	&__wrapper {
+		margin: 97px auto;
+		width: 922px;
+	}
+
+	&__item {
+		display: inline-block;
+		padding-left: 28px;
+		margin-top: 97px;
+		width: 33.33%;
+	}
+
+}
+
+/* Project Box Styling */
+
+.projectBox {
+	position: relative;
+	overflow: hidden;
+	height: 193px;
+
+	&__bgImage {
+		position: absolute;
+		min-width: 100%;
+		min-height: 100%;
+		top: 50%;
+		left: 50%;
+		@include prefix(transform, translate(-50%, -50%), webkit ms);
+	}
+
+	&__description {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		padding-top: 10px;
+		left: 0;
+		width: 120%;
+		font-size: 12px;
+		font-weight: 700;
+		background: rgba(0, 256, 0, 0.6);
+		text-align: center;
+		text-transform: uppercase;
+		transform-origin: top left;
+		@include prefix(transform, rotate(34deg), webkit ms);
+	}
+
 }
