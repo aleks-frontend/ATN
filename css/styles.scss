@@ -7,9 +7,14 @@ $default-text-size: 24px;
 $default-green-color: #0f0;
 $default-purple-color: #9013FE;
 
-$breakpoint-tablet: 1024px;
+$breakpoint-alpha: 1024px;
+$breakpoint-beta: 800px;
+$breakpoint-gamma: 768px;
+$breakpoint-delta: 480px;
+
 
 /* Mixins */
+
 @mixin prefix($property, $value, $prefixes: ()) {
   @each $prefix in $prefixes {
     #{'-' + $prefix + '-' + $property}: $value;
@@ -17,6 +22,7 @@ $breakpoint-tablet: 1024px;
  
   #{$property}: $value;
 }
+
 
 /* Adding Fonts */
 
@@ -64,6 +70,10 @@ p {
   color: #fff;
   text-align: center;
   text-transform: uppercase;
+
+  @media screen and (max-width: $breakpoint-delta) {
+  	margin-top: 20px;
+  }
 }
 
 .hero__mainBanner {
@@ -71,7 +81,12 @@ p {
 	top: 50%;
 	left: 50%;
 	width: 350px;
+	max-width: 90%;
 	@include prefix(transform, translate(-50%, -50%) rotate(15deg), webkit ms);
+
+	@media screen and (max-width: $breakpoint-delta) {
+		@include prefix(transform, translate(-50%, -50%) rotate(0deg), webkit ms);
+	}
 
 	&__row {
 		padding: 7px 0;
@@ -142,29 +157,34 @@ p {
 /* Social Menu Styling */
 
 .socialMenu {
-  position: absolute;
-  top: 40px;
-  right: 40px;
+	position: absolute;
+	top: 40px;
+	right: 40px;
 
-  & > ul {
-    list-style-type: none;
-    margin-left: -10px;
-    font-size: 0;
+	@media screen and (max-width: $breakpoint-delta) {
+		top: 20px;
+		right: 20px;
+	}
 
-    & > li {
-    	display: inline-block;
-    	margin-left: 10px;
-    	width: 16px;
-    	height: 15px;
-    }
-  }
+	& > ul {
+		list-style-type: none;
+		margin-left: -10px;
+		font-size: 0;
+
+		& > li {
+		display: inline-block;
+		margin-left: 10px;
+		width: 16px;
+		height: 15px;
+		}
+	}
 }
 
 .socialMenu__icon {
 	display: block;
 	width: 19px;
 	height: 16px;
-	background-image: url(img/social-icons-sprite.png);
+	background-image: url(img/social-icons-sprite.svg);
 }
 
 .socialMenu__icon--twitter {
@@ -172,17 +192,17 @@ p {
 }
 
 .socialMenu__icon--facebook {
-	background-position: 0 - 16px;
+	background-position: 0 -17px;
 }
 
 .socialMenu__icon--instagram {
-	background-position: 0 -32px;
+	background-position: 0 -34px;
 }
 
 
 /* Signup Form Styling */
 
-.signuForm {
+.signupForm {
 	display: block;
 	position: relative;
 	padding: 0 50px;
@@ -191,7 +211,7 @@ p {
 	height: 44px;
 	background-image: linear-gradient(to right, #5300ff, #eab8ff);
 
-	@media screen and (max-width: $breakpoint-tablet) {
+	@media screen and (max-width: $breakpoint-alpha) {
 		padding-right: 100px;
 		width: 100%;
 	}
@@ -207,6 +227,10 @@ p {
 			margin-left: 15px;
 			opacity: 0.3;
 		}
+
+		@media screen and (max-width: $breakpoint-gamma) {
+			display: none;
+		}
 	}
 
 	&__emailInput {
@@ -216,11 +240,27 @@ p {
 		color: #fff;
 		border: none;
 		background: transparent;
+
+		&::-webkit-input-placeholder {
+		  color: #fff;
+		  opacity: 0.5;
+		}
+		&::-moz-placeholder {
+		  color: #fff;
+		  opacity: 0.5;
+		}
+		&:-ms-input-placeholder {
+		  color: #fff;
+		  opacity: 0.5;
+		}
+		&:-moz-placeholder {
+		  color: #fff;
+		  opacity: 0.5;
+		}
 	}
 
 	&__submitButton {
 		position: absolute;
-		margin-left: -2px;
 		top: 0;
 		left: 100%;
 
@@ -237,7 +277,7 @@ p {
 			border-left: 22px solid #0f0;
 			opacity: 0.6;
 
-			@media screen and (max-width: $breakpoint-tablet) {
+			@media screen and (max-width: $breakpoint-alpha) {
 				display: none;
 			}
 		}
@@ -257,7 +297,7 @@ p {
 			}
 		}
 
-		@media screen and (max-width: $breakpoint-tablet) {
+		@media screen and (max-width: $breakpoint-alpha) {
 			right: 0;
 			left: auto;
 			margin-left: 0;		
@@ -277,6 +317,15 @@ p {
 	&--text-center {
 		text-align: center;
 	}
+
+	@media screen and (max-width: $breakpoint-alpha) {
+		padding: 0 80px;
+	}
+
+	@media screen and (max-width: $breakpoint-gamma) {
+		padding: 0 20px;
+	}
+
 }
 
 
@@ -336,15 +385,28 @@ a[data-tooltip]:hover::before {
 	margin-left: -28px;
 	font-size: 0;
 
-	@media screen and (max-width: $breakpoint-tablet) {
+	@media screen and (max-width: $breakpoint-alpha) {
 		margin-left: 0;
 		text-align: center;
+	}
+
+	@media screen and (max-width: $breakpoint-delta) {
+		margin-top: -40px;
 	}
 
 	&__wrapper {
 		margin: 97px auto;
 		padding: 0 59px;
-		max-width: 1024px;
+		width: 1024px;
+		max-width: 100%;
+
+		@media screen and (max-width: $breakpoint-gamma) {
+			padding: 0 10px;
+		}
+
+		@media screen and (max-width: $breakpoint-delta) {
+			padding: 0;
+		}
 	}
 
 	&__item {
@@ -354,11 +416,17 @@ a[data-tooltip]:hover::before {
 		width: 33.33%;
 		vertical-align: top;
 
-		@media screen and (max-width: $breakpoint-tablet) {
+		@media screen and (max-width: $breakpoint-alpha) {
 			padding-left: 14px;
 			padding-right: 14px;
-			width: 289px;
-			height: 194px;
+			width: 311px;
+			height: 193px;
+		}
+
+		@media screen and (max-width: $breakpoint-delta) {
+			padding: 0;
+			margin-top: 40px;
+			width: 283px;
 		}
 	}
 
@@ -370,6 +438,7 @@ a[data-tooltip]:hover::before {
 .projectBox {
 	position: relative;
 	overflow: hidden;
+	width: 283px;
 	height: 193px;
 
 	&__bgImage {
@@ -387,7 +456,7 @@ a[data-tooltip]:hover::before {
 		bottom: 0;
 		padding-top: 10px;
 		left: 0;
-		width: 120%;
+		width: 342px;
 		font-size: 12px;
 		font-weight: 700;
 		background: rgba(0, 256, 0, 0.6);
@@ -399,6 +468,44 @@ a[data-tooltip]:hover::before {
 
 }
 
+
+/* Green Arrow Button Styling */
+
+.buttonDefault {
+	display: inline-block;
+	position: relative;
+	padding: 0 20px;
+	height: 44px;
+	font-size: 15px;
+	line-height: 44px;
+	font-weight: 700;
+	color: #fff;
+	border: none;
+	background: #0f0;
+	text-decoration: none;
+	text-transform: uppercase;
+	
+	&:hover {
+		cursor: pointer;
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: -22px;
+		width: 0; 
+		height: 0; 
+		border-top: 22px solid transparent;
+		border-bottom: 22px solid transparent;  
+		border-left: 22px solid #0f0;
+	}
+
+	&--margin-top-big {
+		margin-top: 130px;
+	}
+}
 
 /* Footer Styling */
 
@@ -414,6 +521,11 @@ a[data-tooltip]:hover::before {
 		padding: 58px 58px 200px 58px;
 		max-width: 1024px;
 		min-height: 310px;
+
+		@media screen and (max-width: $breakpoint-gamma) {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
 	}
 
 	&__bottom {
@@ -421,7 +533,12 @@ a[data-tooltip]:hover::before {
 		padding-right: 55px; /* Making room for the Logo */
 		bottom: 44px;
 		left: 68px;
-		right: 0;
+		right: 43px;
+
+		@media screen and (max-width: $breakpoint-gamma) {
+			left: 20px;
+			right: 20px;
+		}
 	}
 
 	&__copyrightText {
@@ -436,7 +553,7 @@ a[data-tooltip]:hover::before {
 
 	&__logo {
 		position: absolute;
-		right: 43px;
+		right: 0;
 		bottom: 0;
 	}
 }
