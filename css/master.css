@@ -324,41 +324,57 @@ a[data-tooltip]:hover::before {
     width: 342px;
     font-size: 12px;
     font-weight: 700;
-    background: rgba(0, 255, 0, 0.6);
     text-align: center;
     text-transform: uppercase;
     transform-origin: top left;
     -webkit-transform: rotate(34deg);
     -ms-transform: rotate(34deg);
-    transform: rotate(34deg); }
+    transform: rotate(34deg);
+    -webkit-transition: 0.3s all ease-in-out 0s;
+    -ms-transition: 0.3s all ease-in-out 0s;
+    transition: 0.3s all ease-in-out 0s; }
+    .projectBox__description > span {
+      color: #000; }
+    .projectBox__description--green {
+      background: rgba(0, 255, 0, 0.6); }
+    .projectBox__description--purple {
+      background: rgba(144, 19, 254, 0.6); }
+  .projectBox:hover .projectBox__description--green {
+    background: rgba(0, 255, 0, 0.8); }
+  .projectBox:hover .projectBox__description--purple {
+    background: rgba(144, 19, 254, 0.8); }
 
 /* Green Arrow Button Styling */
 .buttonDefault {
   display: inline-block;
   position: relative;
   padding: 0 20px;
-  height: 44px;
+  height: 34px;
   font-size: 15px;
-  line-height: 44px;
+  line-height: 28px;
   font-weight: 700;
   color: #fff;
-  border: none;
+  border: 3px solid #0f0;
+  border-right: none;
   background: #0f0;
   text-decoration: none;
   text-transform: uppercase; }
   .buttonDefault:hover {
+    color: #0f0;
+    background: #fff;
     cursor: pointer; }
   .buttonDefault::after {
     content: '';
     display: block;
     position: absolute;
-    top: 0;
-    right: -22px;
-    width: 0;
-    height: 0;
-    border-top: 22px solid transparent;
-    border-bottom: 22px solid transparent;
-    border-left: 22px solid #0f0; }
+    top: -3px;
+    right: -18px;
+    width: 18px;
+    height: 34px;
+    background-image: url(img/default-button-bg--sprite.png);
+    background-repeat: no-repeat; }
+  .buttonDefault:hover::after {
+    background-position: 0 -34px; }
   .buttonDefault--margin-top-big {
     margin-top: 130px; }
 

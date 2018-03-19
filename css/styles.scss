@@ -16,11 +16,11 @@ $breakpoint-delta: 480px;
 /* Mixins */
 
 @mixin prefix($property, $value, $prefixes: ()) {
-  @each $prefix in $prefixes {
-    #{'-' + $prefix + '-' + $property}: $value;
-  }
+	@each $prefix in $prefixes {
+		#{'-' + $prefix + '-' + $property}: $value;
+  	}
  
-  #{$property}: $value;
+	#{$property}: $value;
 }
 
 
@@ -42,7 +42,7 @@ html, body {
 }
 
 *, *:before, *:after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 p {
@@ -57,23 +57,23 @@ p {
 /* Hero Section Styling */
 
 .hero {
-  position: relative;
-  padding: 40px 0 0;
-  min-height: 599px;
-  background: url(img/hero-bg.jpg) no-repeat center bottom;
-  background-size: cover;
+	position: relative;
+	padding: 40px 0 0;
+	min-height: 599px;
+	background: url(img/hero-bg.jpg) no-repeat center bottom;
+	background-size: cover;
 }
 
 .hero__comingSoonBanner {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
 
-  @media screen and (max-width: $breakpoint-delta) {
-  	margin-top: 20px;
-  }
+	@media screen and (max-width: $breakpoint-delta) {
+		margin-top: 20px;
+	}
 }
 
 .hero__mainBanner {
@@ -242,20 +242,20 @@ p {
 		background: transparent;
 
 		&::-webkit-input-placeholder {
-		  color: #fff;
-		  opacity: 0.5;
+			color: #fff;
+			opacity: 0.5;
 		}
 		&::-moz-placeholder {
-		  color: #fff;
-		  opacity: 0.5;
+			color: #fff;
+			opacity: 0.5;
 		}
 		&:-ms-input-placeholder {
-		  color: #fff;
-		  opacity: 0.5;
+			color: #fff;
+			opacity: 0.5;
 		}
 		&:-moz-placeholder {
-		  color: #fff;
-		  opacity: 0.5;
+			color: #fff;
+			opacity: 0.5;
 		}
 	}
 
@@ -273,7 +273,7 @@ p {
 			width: 0; 
 			height: 0; 
 			border-top: 22px solid transparent;
-			border-bottom: 22px solid transparent;  
+			border-bottom: 22px solid transparent;	
 			border-left: 22px solid #0f0;
 			opacity: 0.6;
 
@@ -459,11 +459,32 @@ a[data-tooltip]:hover::before {
 		width: 342px;
 		font-size: 12px;
 		font-weight: 700;
-		background: rgba(0, 256, 0, 0.6);
 		text-align: center;
 		text-transform: uppercase;
 		transform-origin: top left;
 		@include prefix(transform, rotate(34deg), webkit ms);
+		@include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+		& > span {
+			color: #000;
+		}
+
+		&--green {
+			background: rgba($default-green-color, .6);
+		}
+
+		&--purple {
+			background: rgba($default-purple-color, .6);
+		}
+
+	}
+
+	&:hover &__description--green {
+		background: rgba($default-green-color, .8);
+	}
+
+	&:hover &__description--purple {
+		background: rgba($default-purple-color, .8);
 	}
 
 }
@@ -475,17 +496,20 @@ a[data-tooltip]:hover::before {
 	display: inline-block;
 	position: relative;
 	padding: 0 20px;
-	height: 44px;
+	height: 34px;
 	font-size: 15px;
-	line-height: 44px;
+	line-height: 28px;
 	font-weight: 700;
 	color: #fff;
-	border: none;
-	background: #0f0;
+	border: 3px solid $default-green-color;
+	border-right: none;
+	background: $default-green-color;
 	text-decoration: none;
 	text-transform: uppercase;
 	
 	&:hover {
+		color: $default-green-color;
+		background: #fff;
 		cursor: pointer;
 	}
 
@@ -493,13 +517,16 @@ a[data-tooltip]:hover::before {
 		content: '';
 		display: block;
 		position: absolute;
-		top: 0;
-		right: -22px;
-		width: 0; 
-		height: 0; 
-		border-top: 22px solid transparent;
-		border-bottom: 22px solid transparent;  
-		border-left: 22px solid #0f0;
+		top: -3px;
+		right: -18px;
+		width: 18px; 
+		height: 34px; 
+		background-image: url(img/default-button-bg--sprite.png);
+		background-repeat: no-repeat;
+	}
+
+	&:hover::after {
+		background-position: 0 -34px;
 	}
 
 	&--margin-top-big {
