@@ -20,7 +20,94 @@ p {
   line-height: 35px;
   color: #000730; }
 
-/* Hero Section Styling */
+/* Header Styling */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; }
+  .header__utilities {
+    float: right;
+    padding-top: 40px;
+    padding-right: 40px; }
+    .header__utilities__search {
+      float: left; }
+      .header__utilities__search input[type="text"] {
+        margin-top: -20px;
+        margin-right: 60px;
+        padding-left: 50px;
+        width: 130px;
+        height: 53px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        background: transparent url("img/search-bg-sprite.png") no-repeat;
+        background-position: 0 -53px;
+        border: none;
+        text-transform: uppercase; }
+        .header__utilities__search input[type="text"]:hover, .header__utilities__search input[type="text"]:focus {
+          background-position: 0 0; }
+        .header__utilities__search input[type="text"]::-webkit-input-placeholder {
+          color: #fff;
+          opacity: 0.8; }
+        .header__utilities__search input[type="text"]::-moz-placeholder {
+          color: #fff;
+          opacity: 0.8; }
+        .header__utilities__search input[type="text"]:-ms-input-placeholder {
+          color: #fff;
+          opacity: 0.8; }
+        .header__utilities__search input[type="text"]:-moz-placeholder {
+          color: #fff;
+          opacity: 0.8; }
+
+/* Main Navigation Styling */
+.mainNavigation {
+  float: left;
+  padding: 40px; }
+  .mainNavigation > ul {
+    margin-left: -25px;
+    font-size: 0; }
+  .mainNavigation__item {
+    display: inline-block;
+    position: relative;
+    margin-left: 25px; }
+    .mainNavigation__item > a {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      -webkit-transition: 0.3s all ease-in-out 0s;
+      -ms-transition: 0.3s all ease-in-out 0s;
+      transition: 0.3s all ease-in-out 0s; }
+      .mainNavigation__item > a:hover {
+        color: #0f0; }
+    .mainNavigation__item__dropdown {
+      position: absolute;
+      display: none;
+      top: 100%;
+      left: 0;
+      padding-top: 15px;
+      min-width: 150px; }
+    .mainNavigation__item__dropdownItem {
+      display: block;
+      margin-bottom: 10px; }
+      .mainNavigation__item__dropdownItem > a {
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.6;
+        -webkit-transition: 0.3s all ease-in-out 0s;
+        -ms-transition: 0.3s all ease-in-out 0s;
+        transition: 0.3s all ease-in-out 0s; }
+        .mainNavigation__item__dropdownItem > a:hover {
+          opacity: 1; }
+    .mainNavigation__item:hover > .mainNavigation__item__dropdown {
+      display: block; }
+
+/* Hero Styling */
 .hero {
   position: relative;
   padding: 40px 0 0;
@@ -86,7 +173,7 @@ p {
 
 /* Arrow Button Styling */
 .arrowButton {
-  display: block;
+  display: inline-block;
   width: 22px;
   height: 22px;
   background: url(img/arrow-button.png) no-repeat;
@@ -96,9 +183,12 @@ p {
 
 /* Social Menu Styling */
 .socialMenu {
-  position: absolute;
-  top: 40px;
-  right: 40px; }
+  float: right; }
+  .socialMenu--absolute {
+    position: absolute;
+    float: none;
+    top: 40px;
+    right: 40px; }
   @media screen and (max-width: 480px) {
     .socialMenu {
       top: 20px;
@@ -135,7 +225,7 @@ p {
   padding: 0 50px;
   width: 635px;
   max-width: 100%;
-  height: 44px;
+  height: 45px;
   background-image: linear-gradient(to right, #5300ff, #eab8ff); }
   @media screen and (max-width: 1024px) {
     .signupForm {
@@ -144,7 +234,7 @@ p {
   .signupForm__label {
     font-size: 15px;
     font-weight: 700;
-    line-height: 44px;
+    line-height: 45px;
     color: #fff; }
     .signupForm__label::after {
       content: '|';
@@ -154,7 +244,7 @@ p {
       .signupForm__label {
         display: none; } }
   .signupForm__emailInput {
-    height: 44px;
+    height: 45px;
     font-size: 15px;
     font-weight: 700;
     color: #fff;
@@ -176,39 +266,43 @@ p {
     position: absolute;
     top: 0;
     left: 100%; }
+    .signupForm__submitButton:hover::after {
+      background-position: 0 -45px; }
     .signupForm__submitButton::after {
       content: '';
       display: block;
       position: absolute;
       top: 0;
-      right: -22px;
-      width: 0;
-      height: 0;
-      border-top: 22px solid transparent;
-      border-bottom: 22px solid transparent;
-      border-left: 22px solid #0f0;
-      opacity: 0.6; }
+      right: -23px;
+      width: 23px;
+      height: 45px;
+      background-image: url(img/default-button-bg-lg--sprite.png);
+      background-repeat: no-repeat; }
       @media screen and (max-width: 1024px) {
         .signupForm__submitButton::after {
           display: none; } }
     .signupForm__submitButton > input[type="submit"] {
       padding: 0 20px;
-      height: 44px;
+      height: 45px;
       font-size: 15px;
       font-weight: 700;
       color: #fff;
-      border: none;
       background: rgba(0, 255, 0, 0.6);
+      border: 3px solid rgba(0, 255, 0, 0.6);
+      border-right: none;
       text-transform: uppercase; }
       .signupForm__submitButton > input[type="submit"]:hover {
         cursor: pointer; }
+    .signupForm__submitButton:hover > input[type="submit"] {
+      color: #0f0;
+      background: transparent; }
     @media screen and (max-width: 1024px) {
       .signupForm__submitButton {
         right: 0;
         left: auto;
         margin-left: 0; } }
 
-/* Home Text Section Styling */
+/* Home Text Styling */
 .homeTextContent {
   margin: 100px auto;
   padding: 0 198px;
@@ -239,7 +333,7 @@ a[data-tooltip]::before {
   position: absolute;
   display: none;
   font-size: 12px;
-  color: #000;
+  color: #000730;
   line-height: 20px;
   max-width: 240px;
   padding: 14px 24px 18px;
@@ -299,6 +393,15 @@ a[data-tooltip]:hover::before {
         padding: 0;
         margin-top: 40px;
         width: 283px; } }
+  .threeColGrid__loadMore {
+    padding: 130px 0 30px;
+    text-align: center; }
+    .threeColGrid__loadMore > span {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #000730; }
 
 /* Project Box Styling */
 .projectBox {
@@ -319,7 +422,7 @@ a[data-tooltip]:hover::before {
     position: absolute;
     top: 0;
     bottom: 0;
-    padding-top: 10px;
+    padding: 10px 40px 0;
     left: 0;
     width: 342px;
     font-size: 12px;
@@ -333,11 +436,11 @@ a[data-tooltip]:hover::before {
     -webkit-transition: 0.3s all ease-in-out 0s;
     -ms-transition: 0.3s all ease-in-out 0s;
     transition: 0.3s all ease-in-out 0s; }
-    .projectBox__description > span {
-      color: #000; }
     .projectBox__description--green {
+      color: #000730;
       background: rgba(0, 255, 0, 0.6); }
     .projectBox__description--purple {
+      color: #0f0;
       background: rgba(144, 19, 254, 0.6); }
   .projectBox:hover .projectBox__description--green {
     background: rgba(0, 255, 0, 0.8); }
@@ -377,6 +480,23 @@ a[data-tooltip]:hover::before {
     background-position: 0 -34px; }
   .buttonDefault--margin-top-big {
     margin-top: 130px; }
+
+/* Advert Styling */
+.advert {
+  margin: 0 auto;
+  max-width: 939px;
+  border: 1px solid #979797; }
+  .advert > img {
+    display: block; }
+
+/* Decoration Block Styling */
+.decorationBlock {
+  display: block;
+  margin: 0 auto;
+  max-width: 1024px;
+  height: auto; }
+  .decorationBlock--bottom {
+    margin-top: -42px; }
 
 /* Footer Styling */
 .footer {

@@ -1,11 +1,11 @@
 
 /* Variables */
 
-$default-text-color: #000730;
 $default-text-size: 24px;
 
-$default-green-color: #0f0;
-$default-purple-color: #9013FE;
+$default-color-black: #000730;
+$default-color-green: #0f0;
+$default-color-purple: #9013FE;
 
 $breakpoint-alpha: 1024px;
 $breakpoint-beta: 800px;
@@ -50,11 +50,135 @@ p {
 	font-size: $default-text-size;
 	font-weight: 700;
 	line-height: 35px;
-	color: $default-text-color;
+	color: $default-color-black;
 }
 
 
-/* Hero Section Styling */
+/* Header Styling */
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+
+	&__utilities {
+		float: right;
+		padding-top: 40px;
+		padding-right: 40px;
+
+		&__search {
+			float: left;
+
+			& input[type="text"] {
+				margin-top: -20px;
+				margin-right: 60px;
+				padding-left: 50px;
+				width: 130px;
+				height: 53px;
+				font-size: 15px;
+				font-weight: 700;
+				color: #fff;
+				background: transparent url('img/search-bg-sprite.png') no-repeat;
+				background-position: 0 -53px;
+				border: none;
+				text-transform: uppercase;
+
+				&:hover,
+				&:focus {
+					background-position: 0 0;
+				}
+
+				&::-webkit-input-placeholder {
+					color: #fff;
+					opacity: 0.8;
+				}
+
+				&::-moz-placeholder {
+					color: #fff;
+					opacity: 0.8;
+				}
+
+				&:-ms-input-placeholder {
+					color: #fff;
+					opacity: 0.8;
+				}
+
+				&:-moz-placeholder {
+					color: #fff;
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+}
+
+
+/* Main Navigation Styling */
+
+.mainNavigation {
+	float: left;
+	padding: 40px;
+
+	& > ul {
+		margin-left: -25px;
+		font-size: 0;
+	}
+
+	&__item {
+		display: inline-block;
+		position: relative;
+		margin-left: 25px;
+
+		& > a {
+			font-size: 15px;
+			font-weight: 700;
+			color: #fff;
+			text-decoration: none;
+			text-transform: uppercase;
+			@include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+			&:hover {
+				color: $default-color-green;
+			}
+		}
+
+		&__dropdown {
+			position: absolute;
+			display: none;
+			top: 100%;
+			left: 0;
+			padding-top: 15px;
+			min-width: 150px;
+		}
+
+		&__dropdownItem {
+			display: block;
+			margin-bottom: 10px;
+
+			& > a {
+				font-size: 15px;
+				font-weight: 700;
+				color: #fff;
+				text-decoration: none;
+				opacity: 0.6;
+				@include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		&:hover > &__dropdown {
+			display: block;
+		}
+	}
+}
+
+
+/* Hero Styling */
 
 .hero {
 	position: relative;
@@ -142,7 +266,7 @@ p {
 /* Arrow Button Styling */
 
 .arrowButton {
-	display: block;
+	display: inline-block;
 	width: 22px;
 	height: 22px;
 	background: url(img/arrow-button.png) no-repeat;
@@ -157,9 +281,14 @@ p {
 /* Social Menu Styling */
 
 .socialMenu {
-	position: absolute;
-	top: 40px;
-	right: 40px;
+	float: right;
+
+	&--absolute {
+		position: absolute;
+		float: none;
+		top: 40px;
+		right: 40px;
+	}
 
 	@media screen and (max-width: $breakpoint-delta) {
 		top: 20px;
@@ -208,7 +337,7 @@ p {
 	padding: 0 50px;
 	width: 635px;
 	max-width: 100%;
-	height: 44px;
+	height: 45px;
 	background-image: linear-gradient(to right, #5300ff, #eab8ff);
 
 	@media screen and (max-width: $breakpoint-alpha) {
@@ -219,7 +348,7 @@ p {
 	&__label {
 		font-size: 15px;
 		font-weight: 700;
-		line-height: 44px;
+		line-height: 45px;
 		color: #fff;
 
 		&::after {
@@ -234,7 +363,7 @@ p {
 	}
 
 	&__emailInput {
-		height: 44px;
+		height: 45px;
 		font-size: 15px;
 		font-weight: 700;
 		color: #fff;
@@ -245,14 +374,17 @@ p {
 			color: #fff;
 			opacity: 0.5;
 		}
+
 		&::-moz-placeholder {
 			color: #fff;
 			opacity: 0.5;
 		}
+
 		&:-ms-input-placeholder {
 			color: #fff;
 			opacity: 0.5;
 		}
+
 		&:-moz-placeholder {
 			color: #fff;
 			opacity: 0.5;
@@ -264,18 +396,20 @@ p {
 		top: 0;
 		left: 100%;
 
+		&:hover::after {
+			background-position: 0 -45px;
+		}
+
 		&::after {
 			content: '';
 			display: block;
 			position: absolute;
 			top: 0;
-			right: -22px;
-			width: 0; 
-			height: 0; 
-			border-top: 22px solid transparent;
-			border-bottom: 22px solid transparent;	
-			border-left: 22px solid #0f0;
-			opacity: 0.6;
+			right: -23px;
+			width: 23px;
+			height: 45px; 
+			background-image: url(img/default-button-bg-lg--sprite.png);
+			background-repeat: no-repeat;
 
 			@media screen and (max-width: $breakpoint-alpha) {
 				display: none;
@@ -284,17 +418,23 @@ p {
 
 		& > input[type="submit"] {
 			padding: 0 20px;
-			height: 44px;
+			height: 45px;
 			font-size: 15px;
 			font-weight: 700;
 			color: #fff;
-			border: none;
-			background: rgba(0, 256, 0, 0.6);
+			background: rgba($default-color-green, 0.6);
+			border: 3px solid rgba($default-color-green, 0.6);
+			border-right: none;
 			text-transform: uppercase;
 			
 			&:hover {
 				cursor: pointer;
 			}
+		}
+
+		&:hover > input[type="submit"] {
+			color: $default-color-green;
+			background: transparent;
 		}
 
 		@media screen and (max-width: $breakpoint-alpha) {
@@ -307,7 +447,7 @@ p {
 }
 
 
-/* Home Text Section Styling */
+/* Home Text Styling */
 
 .homeTextContent {
 	margin: 100px auto;
@@ -336,11 +476,11 @@ p {
 	text-decoration: none;
 
 	&--green {
-		color: #0f0;
+		color: $default-color-green;
 	}
 
 	&--purple {
-		color: $default-purple-color;
+		color: $default-color-purple;
 	}
 }
 
@@ -353,24 +493,24 @@ a[data-tooltip]::before {
 	position: absolute;
 	display: none;
 	font-size: 12px;
-	color: #000;
+	color: $default-color-black;
 	line-height: 20px;
 	max-width: 240px;
 	padding: 14px 24px 18px;
 	bottom: 100%;
 	left: -10px;
-	border: 3px solid #0f0;
+	border: 3px solid $default-color-green;
 	border-radius: 8px;
 	background: #fff;
 	text-align: left;
 }
 
 a[data-tooltip-color="green"]::before {
-	border-color: #0f0;
+	border-color: $default-color-green;
 }
 
 a[data-tooltip-color="purple"]::before {
-	border-color: $default-purple-color;
+	border-color: $default-color-purple;
 }
 
 a[data-tooltip]:hover::before {
@@ -430,6 +570,19 @@ a[data-tooltip]:hover::before {
 		}
 	}
 
+	&__loadMore {
+		padding: 130px 0 30px;
+		text-align: center;
+
+		& > span {
+			display: block;
+			margin-bottom: 15px;
+			font-size: 15px;
+			font-weight: 700;
+			color: $default-color-black;
+		}
+	}
+
 }
 
 
@@ -454,7 +607,7 @@ a[data-tooltip]:hover::before {
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		padding-top: 10px;
+		padding: 10px 40px 0;
 		left: 0;
 		width: 342px;
 		font-size: 12px;
@@ -465,26 +618,24 @@ a[data-tooltip]:hover::before {
 		@include prefix(transform, rotate(34deg), webkit ms);
 		@include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
 
-		& > span {
-			color: #000;
-		}
-
 		&--green {
-			background: rgba($default-green-color, .6);
+			color: $default-color-black;
+			background: rgba($default-color-green, .6);
 		}
 
 		&--purple {
-			background: rgba($default-purple-color, .6);
+			color: $default-color-green;
+			background: rgba($default-color-purple, .6);
 		}
 
 	}
 
 	&:hover &__description--green {
-		background: rgba($default-green-color, .8);
+		background: rgba($default-color-green, .8);
 	}
 
 	&:hover &__description--purple {
-		background: rgba($default-purple-color, .8);
+		background: rgba($default-color-purple, .8);
 	}
 
 }
@@ -501,14 +652,14 @@ a[data-tooltip]:hover::before {
 	line-height: 28px;
 	font-weight: 700;
 	color: #fff;
-	border: 3px solid $default-green-color;
+	border: 3px solid $default-color-green;
 	border-right: none;
-	background: $default-green-color;
+	background: $default-color-green;
 	text-decoration: none;
 	text-transform: uppercase;
 	
 	&:hover {
-		color: $default-green-color;
+		color: $default-color-green;
 		background: #fff;
 		cursor: pointer;
 	}
@@ -531,6 +682,33 @@ a[data-tooltip]:hover::before {
 
 	&--margin-top-big {
 		margin-top: 130px;
+	}
+}
+
+
+/* Advert Styling */
+
+.advert {
+	margin: 0 auto;
+	max-width: 939px;
+	border: 1px solid #979797;
+
+	& > img {
+		display: block;
+	}
+}
+
+
+/* Decoration Block Styling */
+
+.decorationBlock {
+	display: block;
+	margin: 0 auto;
+	max-width: 1024px;
+	height: auto;
+
+	&--bottom {
+		margin-top: -42px;
 	}
 }
 
