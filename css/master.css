@@ -34,6 +34,7 @@ h2 {
 
 p {
   margin: 18px 0;
+  font-family: 'brownlight';
   font-size: 15px;
   color: #000730;
   line-height: 20px; }
@@ -499,8 +500,8 @@ a {
       padding: 0 20px; } }
   .homeTextContent > p {
     margin: 50px 0;
+    font-family: 'brownbold';
     font-size: 24px;
-    font-weight: 700;
     line-height: 35px; }
 
 /* Default Links Styling */
@@ -818,6 +819,16 @@ a[data-tooltip]:hover::before {
   font-size: 22px;
   line-height: 20px;
   color: #000730; }
+.projectBoxSlider__headline, .projectBoxSlider__info {
+  display: block;
+  margin-top: 7px;
+  font-family: 'brownbold';
+  font-size: 15px;
+  color: #000730;
+  line-height: 20px; }
+.projectBoxSlider__info {
+  margin-top: 0;
+  font-family: 'brownlight'; }
 
 /* Sidebar Section - Used in Most of the Templates */
 .sidebarPrimary {
@@ -858,8 +869,13 @@ a[data-tooltip]:hover::before {
       padding-right: 0;
       padding-bottom: 20px;
       width: 100%; } }
+  .contentPrimary--narrow {
+    float: right;
+    max-width: 500px; }
   .contentPrimary__textBlock {
     margin-bottom: 30px; }
+    .contentPrimary__textBlock--marginBottomBig {
+      margin-bottom: 90px; }
     .contentPrimary__textBlock__img {
       display: block;
       margin: 20px auto 50px;
@@ -904,7 +920,6 @@ a[data-tooltip]:hover::before {
 
 /* Contact Form Styling */
 .contactForm {
-  padding-left: 80px;
   margin-top: -20px; }
   @media screen and (max-width: 768px) {
     .contactForm {
@@ -913,6 +928,8 @@ a[data-tooltip]:hover::before {
     margin-left: -20px;
     font-size: 0;
     /* Fighting the Space Between Inline Block Elements */ }
+    .contactForm__row--separator {
+      margin-top: 40px; }
   .contactForm__col {
     display: inline-block;
     margin-top: 20px;
@@ -924,6 +941,10 @@ a[data-tooltip]:hover::before {
       @media screen and (max-width: 480px) {
         .contactForm__col--half {
           width: 100%; } }
+  .contactForm__sectionTitle {
+    font-family: 'brownbold';
+    font-size: 15px;
+    text-transform: uppercase; }
   .contactForm__inputText, .contactForm__inputTextarea {
     display: block;
     padding: 20px;
@@ -947,6 +968,10 @@ a[data-tooltip]:hover::before {
       opacity: 1; }
   .contactForm__inputTextarea {
     height: 240px; }
+    .contactForm__inputTextarea--small {
+      height: 133px; }
+    .contactForm__inputTextarea--medium {
+      height: 180px; }
   .contactForm__inputCheckbox {
     position: absolute;
     left: 0; }
