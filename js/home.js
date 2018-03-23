@@ -1,6 +1,4 @@
-$(window).on('resize', function() {
-	heroHeightCalculation();
-}).trigger('resize');
+$(window).on('resize', heroHeightCalculation).trigger('resize');
 
 $('.js-scroll-trigger').on('click', function(e) {
 	var $this = $(this),
@@ -22,3 +20,24 @@ function heroHeightCalculation() {
 		height: winHeight
 	});
 }
+
+
+/* Isotope Filtering - Products Grid on Homepage Initialization */
+
+var isotopeGridProductsHome = $('.js-isotopGrid').isotope({
+	itemSelector: '.js-isotopGrid__item',
+	layoutMode: 'fitRows'
+});
+
+$('.threeColGrid__filters__item').on('click', function(e) {
+	var $this = $(this),
+		filterValue = $this.attr('data-filter');
+
+	isotopeGridProductsHome.isotope({ filter: filterValue});
+	$('.threeColGrid__filters__item')
+		.removeClass('threeColGrid__filters__item--active');
+
+	$this.addClass('threeColGrid__filters__item--active');
+
+	e.preventDefault();
+});
