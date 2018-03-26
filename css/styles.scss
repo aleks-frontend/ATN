@@ -1,5 +1,5 @@
 
-/* Variables */
+// Variables
 
 $default-text-size: 15px;
 
@@ -13,7 +13,7 @@ $breakpoint-gamma: 768px;
 $breakpoint-delta: 480px;
 
 
-/* Mixins */
+// Mixins
 
 @mixin prefix($property, $value, $prefixes: ()) {
 	@each $prefix in $prefixes {
@@ -486,6 +486,15 @@ a {
 			margin-top: 5px;
 		}
 	}
+}
+
+
+/* Inner Pages Static Hero Image */
+
+.staticHero {
+	display: block;
+	margin-bottom: 120px;
+	width: 100%;
 }
 
 
@@ -1187,9 +1196,17 @@ a[data-tooltip]:hover::before {
 .sidebarPrimary {
 	float: left;
 	position: relative;
-	padding-bottom: 200px;
+	padding-bottom: 20px;
 	padding-right: 80px;
 	width: 30%;
+
+	&--wide {
+		width: 40%;
+	}
+
+	&--hasFixedFooter {
+		padding-bottom: 200px;
+	}
 
 	@media screen and (max-width: $breakpoint-gamma) {
 		float: none;
@@ -1226,6 +1243,12 @@ a[data-tooltip]:hover::before {
 	padding-bottom: 50px;
 	width: 70%;
 
+
+	&--narrow {
+		width: 60%;
+		max-width: 500px;
+	}
+
 	@media screen and (max-width: $breakpoint-gamma) {
 		float: none;
 		padding-right: 0;
@@ -1233,16 +1256,23 @@ a[data-tooltip]:hover::before {
 		width: 100%;
 	}
 
-	&--narrow {
-		float: right;
-		max-width: 500px;
-	}
-
 	&__textBlock {
 		margin-bottom: 30px;
 
 		&--marginBottomBig {
 			margin-bottom: 90px;
+		}
+
+		& > p:first-child {
+			margin-top: 0;
+		}
+
+		&__subheading {
+			float: right;
+			font-family: 'brownregular';
+			font-size: 15px;
+			font-weight: 400;
+			line-height: 35px;
 		}
 
 		&__img {

@@ -1,5 +1,3 @@
-/* Variables */
-/* Mixins */
 /* Adding Fonts */
 @font-face {
   font-family: 'brownregular';
@@ -340,6 +338,12 @@ a {
     .hero__credits > ul > li {
       display: block;
       margin-top: 5px; }
+
+/* Inner Pages Static Hero Image */
+.staticHero {
+  display: block;
+  margin-bottom: 120px;
+  width: 100%; }
 
 /* Arrow Button Styling */
 .arrowButton {
@@ -834,9 +838,13 @@ a[data-tooltip]:hover::before {
 .sidebarPrimary {
   float: left;
   position: relative;
-  padding-bottom: 200px;
+  padding-bottom: 20px;
   padding-right: 80px;
   width: 30%; }
+  .sidebarPrimary--wide {
+    width: 40%; }
+  .sidebarPrimary--hasFixedFooter {
+    padding-bottom: 200px; }
   @media screen and (max-width: 768px) {
     .sidebarPrimary {
       float: none;
@@ -863,19 +871,27 @@ a[data-tooltip]:hover::before {
   padding-right: 15px;
   padding-bottom: 50px;
   width: 70%; }
+  .contentPrimary--narrow {
+    width: 60%;
+    max-width: 500px; }
   @media screen and (max-width: 768px) {
     .contentPrimary {
       float: none;
       padding-right: 0;
       padding-bottom: 20px;
       width: 100%; } }
-  .contentPrimary--narrow {
-    float: right;
-    max-width: 500px; }
   .contentPrimary__textBlock {
     margin-bottom: 30px; }
     .contentPrimary__textBlock--marginBottomBig {
       margin-bottom: 90px; }
+    .contentPrimary__textBlock > p:first-child {
+      margin-top: 0; }
+    .contentPrimary__textBlock__subheading {
+      float: right;
+      font-family: 'brownregular';
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 35px; }
     .contentPrimary__textBlock__img {
       display: block;
       margin: 20px auto 50px;
