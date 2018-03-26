@@ -1,0 +1,84 @@
+.socialMenu {
+    float: right;
+
+    &--floatNone {
+        float: none;
+    }
+
+    &--absolute {
+        position: absolute;
+        float: none;
+        top: 40px;
+        right: 40px;
+    }
+
+    @media screen and (max-width: $breakpoint-delta) {
+        top: 20px;
+        right: 20px;
+    }
+
+    & > ul {
+        margin-left: -10px;
+        font-size: 0;
+
+        & > li {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+
+    &__icon {
+        display: block;
+        width: 19px;
+        height: 16px;
+        background-image: url(img/social-icons-sprite.svg);
+
+        &--twitter {
+            background-position: 0 0;
+        }
+
+        &--facebook {
+            background-position: 0 -17px;
+        }
+
+        &--instagram {
+            background-position: 0 -34px;
+        }
+
+        &--twitterBlack {
+            background-position: -19px 0;
+        }
+
+        &--facebookBlack {
+            background-position: -19px -17px;
+        }
+
+        &--instagramBlack {
+            background-position: -19px -34px;
+        }
+    }
+}
+
+/* Social Menu - Large - As a separate block (extended .socialMenu) */
+.socialMenuLarge {
+    @extend .socialMenu;
+    
+    &__icon {
+        @extend .socialMenu__icon;
+        width: 34px;
+        height: 29px;
+        background-image: url(img/social-icons-sprite-large.svg);
+
+        &--twitter {
+            background-position: 0 0;
+        }
+
+        &--facebook {
+            background-position: 0 -31px;
+        }
+
+        &--instagram {
+            background-position: 0 -62px;
+        }
+    }
+}

@@ -1,0 +1,945 @@
+// Base
+@import 'base/typography';
+@import 'base/mixins';
+@import 'base/palette';
+@import 'base/mixins';
+@import 'base/breakpoints';
+@import 'base/variables';
+
+// Components
+@import 'components/header';
+@import 'components/hamburger-menu-button';
+@import 'components/hero';
+@import 'components/main-navigation';
+@import 'components/social-menu';
+@import 'components/signup-form';
+@import 'components/home-text-content';
+
+/* General Styling */
+
+html, body {
+    font-family: 'brown';
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0 0 30px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 35px;
+}
+
+h2 {
+    @extend h1;
+    margin: 0;
+}
+
+p { 
+    margin: 18px 0;
+    font-size: $default-text-size;
+    font-weight: 300;
+    color: $default-color-black;
+    line-height: 20px;
+}
+
+a {
+    color: $default-color-green;
+    text-decoration: none;
+}
+
+
+/* General Layout Container Used in all the Templates */
+
+.layoutContainer {
+    position: relative;
+    margin: 0 auto 100px;
+    padding: 0 90px;
+    width: 1024px;
+    max-width: 100%;
+    z-index: 1;
+
+    @media screen and (max-width: $breakpoint-alpha) {
+        padding: 0 20px;
+    }
+}
+
+/* Inner Pages Static Hero Image */
+
+.staticHero {
+    display: block;
+    margin-bottom: 120px;
+    width: 100%;
+}
+
+
+/* Arrow Button Styling */
+
+.arrowButton {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(img/arrow-button-sprite.png) no-repeat;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+/* Default Links Styling */
+
+.defaultLink {
+    font-weight: 700;
+    text-decoration: none;
+
+    &--green {
+        color: $default-color-green;
+    }
+
+    &--purple {
+        color: $default-color-purple;
+    }
+}
+
+a[data-tooltip] {
+    position: relative;
+}
+
+a[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    display: none;
+    font-size: 12px;
+    color: $default-color-black;
+    line-height: 20px;
+    max-width: 240px;
+    padding: 14px 24px 18px;
+    bottom: 100%;
+    left: -10px;
+    border: 3px solid $default-color-green;
+    border-radius: 8px;
+    background: #fff;
+    text-align: left;
+}
+
+a[data-tooltip-color="green"]::before {
+    border-color: $default-color-green;
+}
+
+a[data-tooltip-color="purple"]::before {
+    border-color: $default-color-purple;
+}
+
+a[data-tooltip]:hover::before {
+    display: block;
+}
+
+
+/* Three Columns Grid Styling */
+
+.threeColGrid {
+    position: relative;
+    margin-top: -97px;
+    margin-left: -28px;
+    font-size: 0;
+    z-index: 1;
+
+    @media screen and (max-width: $breakpoint-alpha) {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    @media screen and (max-width: $breakpoint-delta) {
+        margin-top: -40px;
+    }
+
+    &__wrapper {
+        margin: 97px auto;
+        padding: 0 59px;
+        width: 1024px;
+        max-width: 100%;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            padding: 0 10px;
+        }
+
+        @media screen and (max-width: $breakpoint-delta) {
+            padding: 0;
+        }
+    }
+
+    &__filters {
+        position: relative;
+        margin-left: -25px;
+        margin-top: -15px;
+        margin-bottom: 25px;
+        font-size: 0;
+        z-index: 2;
+
+        @media screen and (max-width: $breakpoint-alpha) {
+            text-align: center;
+        }
+
+        & > li {
+            display: inline-block;
+            margin-top: 15px;
+            margin-left: 25px;
+        }
+
+        &__item {
+            font-size: 15px;
+            font-weight: 700;
+            color: $default-color-black;
+            text-decoration: none;
+
+            &--active {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        padding-left: 28px;
+        margin-top: 97px;
+        width: 33.33%;
+        vertical-align: top;
+
+        @media screen and (max-width: $breakpoint-alpha) {
+            padding-left: 14px;
+            padding-right: 14px;
+            width: 311px;
+            height: 193px;
+        }
+
+        @media screen and (max-width: $breakpoint-delta) {
+            padding: 0;
+            margin-top: 40px;
+            left: 50% !important; /* Overriding some Isotope custom styling */
+            width: 283px;
+            @include prefix(transform, translateX(-50%), webkit ms);            
+        }
+    }
+
+    &__loadMore {
+        padding: 130px 0 30px;
+        text-align: center;
+
+        & > span {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            color: $default-color-black;
+        }
+    }
+
+}
+
+
+/* Project Box Styling */
+
+.projectBox {
+    position: relative;
+    overflow: hidden;
+    width: 283px;
+    height: 193px;
+
+    &__bgImage {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 50%;
+        @include prefix(transform, translate(-50%, -50%), webkit ms);
+    }
+
+    &__description {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        padding: 10px 40px 0;
+        left: 0;
+        width: 342px;
+        font-size: 12px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        transform-origin: top left;
+        @include prefix(transform, rotate(34deg), webkit ms);
+        @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+        &--green {
+            color: $default-color-black;
+            background: rgba($default-color-green, .6);
+        }
+
+        &--purple {
+            color: $default-color-green;
+            background: rgba($default-color-purple, .6);
+        }
+
+    }
+
+    &:hover &__description--green {
+        background: rgba($default-color-green, .8);
+    }
+
+    &:hover &__description--purple {
+        background: rgba($default-color-purple, .8);
+    }
+
+    &--small {
+        width: 258px;
+        height: 176px;
+    }
+
+}
+
+
+/* Green Arrow Button Styling */
+
+.buttonDefault {
+    display: inline-block;
+    position: relative;
+    margin: 30px 0;
+    padding: 0 20px;
+    height: 34px;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #fff;
+    border: 3px solid $default-color-green;
+    border-right: none;
+    background: $default-color-green;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    &:hover {
+        color: $default-color-green;
+        background: #fff;
+        cursor: pointer;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -3px;
+        right: -18px;
+        width: 18px; 
+        height: 34px; 
+        background-image: url(img/default-button-bg--sprite.png);
+        background-repeat: no-repeat;
+    }
+
+    &:hover::after {
+        background-position: 0 -34px;
+    }
+
+    &--margin-top-big {
+        margin-top: 130px;
+    }
+}
+
+
+/* Advert Styling */
+
+.advert {
+    margin: 0 auto;
+    width: 939px;
+    max-width: 100%;
+    border: 1px solid #979797;
+
+    & > img {
+        display: block;
+        max-width: 100%;
+    }
+}
+
+
+/* Decoration Block Styling */
+
+.decorationBlock {
+    display: block;
+    margin: 0 auto;
+    width: 1024px;
+    max-width: 100%;
+    height: auto;
+
+    &--bottom {
+        margin-top: -42px;
+    }
+}
+
+
+/* Secondary Navigation Styling - (Footer Navigation) Created as an independent block */
+
+.secondaryNavigation {
+    float: left;
+    margin-left: -35px;
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        float: none;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+
+    & > ul {
+        float: left;
+        padding-left: 35px;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            width: 50%;
+        }
+    }
+
+    &__item {
+        display: block;
+        margin-bottom: 10px;
+
+        & > a {         
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+            &:hover {
+                opacity: 0.4;
+            }
+        }
+    }
+}
+
+
+/* Google Play and App Store buttons - (Footer) Created as an independent block */
+
+.storesMenu {
+    margin-left: -19px;
+    margin-top: -4px;
+    font-size: 0;
+    text-align: right;
+
+    &--pullRight {
+        float: right;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            float: none;
+            text-align: left;
+        }
+    }
+
+    &--clearRight {
+        clear: right;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-top: 19px;
+        padding-left: 19px;
+
+        &__button {
+            display: block;
+            width: 133px;
+            height: 45px;
+
+            &--googlePlay {
+                background: url(img/stores-button-google.png) no-repeat center;
+            }
+
+            &--appStore {
+                background: url(img/stores-button-app-store.png) no-repeat center;
+            }
+        }
+    }
+}
+
+
+/* Hero Slider Styling */
+
+.heroSlider {
+
+    &__wrapper {
+        margin: 0 0 85px;
+        width: 100%;
+        max-width: 817px;       
+        max-height: 422px; /* Temporary solution for hiding the slides before the bxSlider is loaded  */
+        overflow: hidden; /* Temporary solution for hiding the slides before the bxSlider is loaded  */
+
+        & > .bx-wrapper {
+            box-shadow: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+
+            .bx-controls-direction a {
+                margin-top: -11px;
+                width: 22px;
+                height: 22px;
+                background: url(img/arrow-button-sprite.png) no-repeat;
+                
+                &.bx-prev {
+                    left: -66px;
+                    background-position: 0 -22px;
+                }
+
+                &.bx-next {
+                    right: -66px;
+                    background-position: 0 -44px;
+                }
+            }
+
+            .bx-pager {
+                bottom: 40px;
+
+                &.bx-default-pager a {
+                    background: #fff;
+
+                    &:hover, 
+                    &.active, 
+                    &:focus {
+                        background: $default-color-green;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Project Boxes Slider */
+
+.projectBoxSlider {
+    &__wrapper {
+        @extend .heroSlider__wrapper;
+        margin: 25px 0;
+    }
+
+    &__label {
+        display: block;
+        margin-top: 12px;
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 20px;
+        color: $default-color-black;
+    }
+
+    &__headline {
+        display: block;
+        margin-top: 7px;
+        font-size: 15px;
+        font-weight: 700;
+        color: $default-color-black;
+        line-height: 20px;
+    }
+
+    &__info {
+        @extend .projectBoxSlider__headline;
+        margin-top: 0;
+        font-weight: 300;
+    }
+}
+
+
+/* Sidebar Section - Used in Most of the Templates */
+
+.sidebarPrimary {
+    float: left;
+    position: relative;
+    padding-bottom: 20px;
+    padding-right: 80px;
+    width: 30%;
+
+    &--wide {
+        width: 40%;
+    }
+
+    &--hasFixedFooter {
+        padding-bottom: 200px;
+    }
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        float: none;
+        padding-right: 0;
+        padding-bottom: 50px;
+        width: 100%;
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            position: relative;
+        }
+
+        &__label {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 35px;
+        }
+    }
+}
+
+
+/* Main Content Section - Used in Most of the Templates (in combination with sidebarPrimary) */
+
+.contentPrimary {
+    position: relative;
+    float: left;
+    padding-right: 15px;
+    padding-bottom: 50px;
+    width: 70%;
+
+
+    &--narrow {
+        width: 60%;
+        max-width: 500px;
+    }
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        float: none;
+        padding-right: 0;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
+    &__textBlock {
+        margin-bottom: 30px;
+
+        &--marginBottomBig {
+            margin-bottom: 90px;
+        }
+
+        & > p:first-child {
+            margin-top: 0;
+        }
+
+        &__subheading {
+            float: right;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 35px;
+        }
+
+        &__img {
+            display: block;
+            margin: 20px auto 50px;
+            max-width: 100%;
+        }
+
+        &__quote {
+            float: left;
+            position: relative;
+            padding: 35px 0;
+            margin-right: 50px;
+            width: 320px;
+            max-width: 60%;
+            font-size: 25px;
+            font-weight: 300;
+            line-height: 32px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 15px;
+                left: 50%;
+                margin-left: -10px;
+                width: 21px;
+                height: 21px;
+                background-image: url(img/quotes-sprite.svg);
+            }
+
+            &::after {
+                @extend .contentPrimary__textBlock__quote::before;
+                top: auto;
+                bottom: 15px;
+                background-position: 0 -20px;
+            }
+
+            &--right {
+                float: right;
+                margin: 0;
+                margin-left: 50px;
+            }
+        }
+    }
+
+    &__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    &__label {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 35px;
+        }
+    }
+}
+
+
+/* Contact Form Styling */
+
+.contactForm {
+    margin-top: -20px;
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        padding-left: 0;
+    }
+
+    &__row {
+        margin-left: -20px;
+        font-size: 0; /* Fighting the Space Between Inline Block Elements */
+
+        &--separator {
+            margin-top: 40px;
+        }
+    }
+
+    &__col {
+        display: inline-block;
+        margin-top: 20px;
+        padding-left: 20px;
+
+        &--full {
+            width: 100%;
+        }
+
+        &--half {
+            width: 50%;
+
+            @media screen and (max-width: $breakpoint-delta) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__sectionTitle {
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__inputText {
+        display: block;
+        padding: 20px;
+        width: 100%;
+        height: 59px;
+        font-size: 15px;
+        font-weight: 700;
+        color: $default-color-black;
+        border: 3px solid $default-color-black;
+
+        @include placeholderStyling {
+            color: $default-color-black;
+            opacity: 1;
+        }
+    }
+
+    &__inputTextarea {
+        @extend .contactForm__inputText;
+        height: 240px;
+
+        &--small {
+            height: 133px;
+        }
+
+        &--medium {
+            height: 180px;
+        }
+    }
+
+    &__inputCheckbox {
+        position: absolute;
+        left: 0;
+
+        &__label {
+            display: inline-block;
+            position: relative;
+            padding-left: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 16px;
+            cursor: pointer;
+        }
+    }
+
+    &__submitButton {
+        @extend .signupForm__submitButton;
+
+        position: relative;
+        display: inline-block;
+        top: auto;
+        left: auto;
+    }
+}
+
+
+/* Map Section Styling */
+
+#mapContainer {
+    margin: 0 auto;
+    width: 1024px;
+    max-width: 100%;
+    height: 480px;
+}
+
+
+/* Footer Styling */
+
+.footer {
+    background-image: 
+        linear-gradient(
+            #5b01de, #feb3ff
+        );
+
+    &__container {
+        position: relative;
+        margin: 0 auto;
+        padding: 58px 58px 150px 58px;
+        max-width: 1024px;
+        min-height: 310px;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    &__top {
+        padding-bottom: 50px;
+        text-align: center;
+
+        &__subLogo {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 42px;
+            letter-spacing: 0.9px;
+            text-align: center;
+        }
+
+        &__logo {
+            display: block;
+            margin: 0 auto 50px;
+            width: 301px;
+            max-width: 100%;
+        }       
+    }
+
+    &__logosGrid {
+        margin-top: -20px;
+        font-size: 0;
+        text-align: center;
+
+        &__item {
+            display: inline-block;
+            margin: 20px 16.5px 0;
+
+            & > img {
+                display: block;
+                max-width: 80px;
+                height: auto;
+            }
+        }
+    }
+
+    &__content {
+        overflow: hidden;
+    }
+
+    &__utilities {
+        float: right;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            float: none;
+        }
+
+        &__links {
+            float: right;
+            clear: right;
+            margin-top: 55px;
+            text-align: right;
+
+            @media screen and (max-width: $breakpoint-gamma) {
+                float: none;
+                text-align: left;
+            }
+
+            &__item {
+                font-size: 15px;
+                font-weight: 700;
+                line-height: 22px;
+                color: #fff;
+                text-decoration: none;
+                @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+                &:hover {
+                    opacity: 0.4;
+                }
+            }
+        }
+
+        .socialMenu {
+            @media screen and (max-width: $breakpoint-gamma) {
+                float: none;
+            }
+        }
+    }
+
+    &__bottom {
+        position: absolute;
+        padding-right: 55px; /* Making room for the Logo */
+        bottom: 44px;
+        left: 58px;
+        right: 43px;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            left: 20px;
+            right: 20px;
+        }
+    }
+
+    &__copyrightText {
+        display: block;
+        margin: 20px 0 0;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 16px;
+        color: #fff;
+        letter-spacing: 0.1px;
+    }
+
+    &__logo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+/* Additional Helper Classes */
+
+.noTopMarrgin {
+    margin-top: 0;
+}
+
+
+/* Helper Class for Containing Floated Divs */
+
+.clearfix:after {
+  content: "."; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;
+}

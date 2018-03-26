@@ -1,0 +1,123 @@
+.mainNavigation {
+    float: left;
+    padding: 40px;
+    @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);    
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        right: 0;
+        padding: 55px 33px 0;
+        background-image: linear-gradient(to bottom, #914afe, #3408b9);
+    }
+
+    &.is-scrolled-in {
+        left: 0;
+    }
+
+    & > ul {
+        margin-left: -25px;
+        font-size: 0;
+
+        @media screen and (max-width: $breakpoint-alpha) { 
+            margin-left: -15px;
+        }
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            margin-left: 0;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        position: relative;
+        margin-left: 25px;
+
+        @media screen and (max-width: $breakpoint-alpha) {
+            margin-left: 15px;
+        }
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            display: block;
+            margin-left: 0;
+            margin-bottom: 25px;
+        }
+
+        &__button {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+            &:hover {
+                color: $default-color-green;
+            }
+
+            &--black {
+                color: #000;
+            }
+
+            @media screen and (max-width: $breakpoint-alpha) {
+                font-size: 12px;
+            }           
+
+            @media screen and (max-width: $breakpoint-gamma) {
+                font-size: 24px;
+                color: $default-color-green;
+                text-transform: capitalize;
+            }
+        }
+
+        &__dropdown {
+            position: absolute;
+            display: none;
+            top: 100%;
+            left: 0;
+            padding-top: 15px;
+            min-width: 150px;
+
+            @media screen and (max-width: $breakpoint-gamma) {
+                position: relative;
+                top: auto;
+            }
+        }
+
+        &__dropdownItem {
+            display: block;
+            margin-bottom: 10px;
+
+            @media screen and (max-width: $breakpoint-gamma) {
+                margin-bottom: 25px;
+            }
+
+            &__button {
+                font-size: 15px;
+                font-weight: 700;
+                color: #fff;
+                text-decoration: none;
+                opacity: 0.6;
+                @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+                &:hover {
+                    opacity: 1;
+                }           
+
+                @media screen and (max-width: $breakpoint-gamma) {
+                    font-size: 24px;
+                }
+
+                &--black {
+                    color: #000;
+                }
+            }
+        }
+
+        &:hover > &__dropdown {
+            display: block;
+        }
+    }
+}

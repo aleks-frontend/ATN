@@ -1,0 +1,25 @@
+.homeTextContent {
+    margin: 100px auto;
+    padding: 0 198px;
+    max-width: 1024px;
+
+    &--text-center {
+        text-align: center;
+    }
+
+    @media screen and (max-width: $breakpoint-alpha) {
+        padding: 0 80px;
+    }
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        padding: 0 20px;
+    }
+
+    & > p {
+        margin: 50px 0;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 35px;
+    }
+
+}
