@@ -1,0 +1,12 @@
+.partnersGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    margin-top: -30px;
+    margin-bottom: 45px;
+
+    &__item {
+        margin-top: 30px;
+    }
+}

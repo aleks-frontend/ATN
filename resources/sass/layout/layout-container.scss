@@ -1,0 +1,12 @@
+.layoutContainer {
+    position: relative;
+    margin: 0 auto 100px;
+    padding: 0 90px;
+    width: 1024px;
+    max-width: 100%;
+    z-index: 1;
+
+    @media screen and (max-width: $breakpoint-alpha) {
+        padding: 0 20px;
+    }
+}

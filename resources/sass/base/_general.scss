@@ -1,0 +1,36 @@
+html, body {
+    font-family: 'brown';
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0 0 30px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 35px;
+}
+
+h2 {
+    @extend h1;
+    margin: 0;
+}
+
+p { 
+    margin: 18px 0;
+    font-size: $default-text-size;
+    font-weight: 300;
+    color: $default-color-black;
+    line-height: 20px;
+}
+
+a {
+    color: $default-color-green;
+    text-decoration: none;
+}
+
+ul, ol {
+    margin-bottom: 0;
+}

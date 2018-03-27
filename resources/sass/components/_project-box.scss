@@ -1,0 +1,56 @@
+.projectBox {
+    position: relative;
+    overflow: hidden;
+    width: 283px;
+    height: 193px;
+
+    &__bgImage {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 50%;
+        @include prefix(transform, translate(-50%, -50%), webkit ms);
+    }
+
+    &__description {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        padding: 10px 40px 0;
+        left: 0;
+        width: 342px;
+        font-size: 12px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        transform-origin: top left;
+        @include prefix(transform, rotate(34deg), webkit ms);
+        @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+        &--green {
+            color: $default-color-black;
+            background: rgba($default-color-green, .6);
+        }
+
+        &--purple {
+            color: $default-color-green;
+            background: rgba($default-color-purple, .6);
+        }
+
+    }
+
+    &:hover &__description--green {
+        background: rgba($default-color-green, .8);
+    }
+
+    &:hover &__description--purple {
+        background: rgba($default-color-purple, .8);
+    }
+
+    &--small {
+        width: 258px;
+        height: 176px;
+    }
+
+}

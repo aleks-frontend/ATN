@@ -1,0 +1,36 @@
+.secondaryNavigation {
+    float: left;
+    margin-left: -35px;
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        float: none;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+
+    & > ul {
+        float: left;
+        padding-left: 35px;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            width: 50%;
+        }
+    }
+
+    &__item {
+        display: block;
+        margin-bottom: 10px;
+
+        & > a {         
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+            &:hover {
+                opacity: 0.4;
+            }
+        }
+    }
+}

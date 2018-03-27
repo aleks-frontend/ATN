@@ -36,6 +36,7 @@
         & > img {
             display: inline-block;
             margin-right: -7px;
+            vertical-align: bottom;
         }
 
         & > ul {
@@ -47,7 +48,9 @@
                 display: block;
                 margin-top: 5px;
                 color: #fff;
+                font-size: 16px;
                 font-weight: 700;
+                line-height: 1em;
                 text-transform: uppercase;
             }
         }

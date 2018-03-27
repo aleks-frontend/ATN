@@ -1,0 +1,11 @@
+.advert {
+    margin: 0 auto;
+    width: 939px;
+    max-width: 100%;
+    border: 1px solid #979797;
+
+    & > img {
+        display: block;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,49 @@
+.tooltipTrigger {
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &--green {
+        color: $default-color-green;
+    }
+
+    &--purple {
+        color: $default-color-purple;
+    }
+
+    &[data-tooltip] {
+        position: relative;
+    }
+
+    &[data-tooltip]::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        display: none;
+        font-size: 12px;
+        color: $default-color-black;
+        line-height: 20px;
+        max-width: 240px;
+        padding: 14px 24px 18px;
+        bottom: 100%;
+        left: -10px;
+        border: 3px solid $default-color-green;
+        border-radius: 8px;
+        background: #fff;
+        text-align: left;
+    }
+
+    &[data-tooltip-color="green"]::before {
+        border-color: $default-color-green;
+    }
+
+    &[data-tooltip-color="purple"]::before {
+        border-color: $default-color-purple;
+    }
+
+    &[data-tooltip]:hover::before {
+        display: block;
+    }
+}

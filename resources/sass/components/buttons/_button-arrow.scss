@@ -1,0 +1,11 @@
+.arrowButton {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(img/arrow-button-sprite.png) no-repeat;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

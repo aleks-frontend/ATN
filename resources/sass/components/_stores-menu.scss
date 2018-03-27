@@ -1,0 +1,39 @@
+.storesMenu {
+    margin-left: -19px;
+    margin-top: -4px;
+    font-size: 0;
+    text-align: right;
+
+    &--pullRight {
+        float: right;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            float: none;
+            text-align: left;
+        }
+    }
+
+    &--clearRight {
+        clear: right;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-top: 19px;
+        padding-left: 19px;
+
+        &__button {
+            display: block;
+            width: 133px;
+            height: 45px;
+
+            &--googlePlay {
+                background: url(img/stores-button-google.png) no-repeat center;
+            }
+
+            &--appStore {
+                background: url(img/stores-button-app-store.png) no-repeat center;
+            }
+        }
+    }
+}

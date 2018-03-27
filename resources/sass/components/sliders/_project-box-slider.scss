@@ -1,0 +1,30 @@
+.projectBoxSlider {
+    &__wrapper {
+        @extend .heroSlider__wrapper;
+        margin: 25px 0;
+    }
+
+    &__label {
+        display: block;
+        margin-top: 12px;
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 20px;
+        color: $default-color-black;
+    }
+
+    &__headline {
+        display: block;
+        margin-top: 7px;
+        font-size: 15px;
+        font-weight: 700;
+        color: $default-color-black;
+        line-height: 20px;
+    }
+
+    &__info {
+        @extend .projectBoxSlider__headline;
+        margin-top: 0;
+        font-weight: 300;
+    }
+}

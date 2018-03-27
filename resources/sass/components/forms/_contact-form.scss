@@ -1,0 +1,93 @@
+.contactForm {
+    margin-top: -20px;
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        padding-left: 0;
+    }
+
+    &__row {
+        margin-left: -20px;
+        font-size: 0; /* Fighting the Space Between Inline Block Elements */
+
+        &--separator {
+            margin-top: 40px;
+        }
+    }
+
+    &__col {
+        display: inline-block;
+        margin-top: 20px;
+        padding-left: 20px;
+
+        &--full {
+            width: 100%;
+        }
+
+        &--half {
+            width: 50%;
+
+            @media screen and (max-width: $breakpoint-delta) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__sectionTitle {
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__inputText {
+        display: block;
+        padding: 20px;
+        width: 100%;
+        height: 59px;
+        font-size: 15px;
+        font-weight: 700;
+        color: $default-color-black;
+        border: 3px solid $default-color-black;
+
+        @include placeholderStyling {
+            color: $default-color-black;
+            opacity: 1;
+        }
+    }
+
+    &__inputTextarea {
+        @extend .contactForm__inputText;
+        height: 240px;
+
+        &--small {
+            height: 133px;
+        }
+
+        &--medium {
+            height: 180px;
+        }
+    }
+
+    &__inputCheckbox {
+        position: absolute;
+        left: 0;
+
+        &__label {
+            display: inline-block;
+            position: relative;
+            padding-left: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 16px;
+            cursor: pointer;
+        }
+    }
+
+    &__submitButton {
+        @extend .signupForm__submitButton;
+
+        position: relative;
+        display: inline-block;
+        top: auto;
+        left: auto;
+    }
+}

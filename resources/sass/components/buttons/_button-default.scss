@@ -1,0 +1,43 @@
+.buttonDefault {
+    display: inline-block;
+    position: relative;
+    margin: 30px 0;
+    padding: 0 20px;
+    height: 34px;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #fff;
+    border: 3px solid $default-color-green;
+    border-right: none;
+    background: $default-color-green;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    &:hover {
+        color: $default-color-green;
+        background: #fff;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -3px;
+        right: -18px;
+        width: 18px; 
+        height: 34px; 
+        background-image: url(img/default-button-bg--sprite.png);
+        background-repeat: no-repeat;
+    }
+
+    &:hover::after {
+        background-position: 0 -34px;
+    }
+
+    &--margin-top-big {
+        margin-top: 130px;
+    }
+}

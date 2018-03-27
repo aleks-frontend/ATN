@@ -1,0 +1,60 @@
+/* Additional margins and paddings */
+
+.margin-top-zero {
+    margin-top: 0;
+}
+
+.padding-bottom-medium {
+    padding-bottom: 110px;
+}
+
+.padding-bottom-large {
+    padding-bottom: 380px;
+}
+
+/* Background Circles */
+
+.backgroundCircle {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 222px;
+        height: 222px;
+        background: #E0A1DB;
+        @include prefix(border-radius, 50%, webkit ms);
+    }
+
+    &--middleLeft {
+        &::after {
+            top: 50%;
+            left: -56px;
+        }
+    }
+
+    &--bottomLeftDeep {
+        &::after {
+            bottom: -170px;
+            left: 48px;
+        }
+    }
+
+    &--bottomLeft {
+        &::after {
+            bottom: -150px;
+            left: 51px;
+        }
+    }
+}
+
+/* Helper Class for Containing Floated Divs */
+.clearfix:after {
+  content: "."; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;
+}

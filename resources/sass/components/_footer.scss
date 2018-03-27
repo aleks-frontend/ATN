@@ -1,0 +1,130 @@
+.footer {
+    background-image: 
+        linear-gradient(
+            #5b01de, #feb3ff
+        );
+
+    &__container {
+        position: relative;
+        margin: 0 auto;
+        padding: 58px 58px 150px 58px;
+        max-width: 1024px;
+        min-height: 310px;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    &__top {
+        padding-bottom: 50px;
+        text-align: center;
+
+        &__subLogo {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 42px;
+            letter-spacing: 0.9px;
+            text-align: center;
+        }
+
+        &__logo {
+            display: block;
+            margin: 0 auto 50px;
+            width: 301px;
+            max-width: 100%;
+        }       
+    }
+
+    &__logosGrid {
+        margin-top: -20px;
+        font-size: 0;
+        text-align: center;
+
+        &__item {
+            display: inline-block;
+            margin: 20px 16.5px 0;
+
+            & > img {
+                display: block;
+                max-width: 80px;
+                height: auto;
+            }
+        }
+    }
+
+    &__content {
+        overflow: hidden;
+    }
+
+    &__utilities {
+        float: right;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            float: none;
+        }
+
+        &__links {
+            float: right;
+            clear: right;
+            margin-top: 55px;
+            text-align: right;
+
+            @media screen and (max-width: $breakpoint-gamma) {
+                float: none;
+                text-align: left;
+            }
+
+            &__item {
+                font-size: 15px;
+                font-weight: 700;
+                line-height: 22px;
+                color: #fff;
+                text-decoration: none;
+                @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
+
+                &:hover {
+                    opacity: 0.4;
+                }
+            }
+        }
+
+        .socialMenu {
+            @media screen and (max-width: $breakpoint-gamma) {
+                float: none;
+            }
+        }
+    }
+
+    &__bottom {
+        position: absolute;
+        padding-right: 55px; /* Making room for the Logo */
+        bottom: 44px;
+        left: 58px;
+        right: 43px;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            left: 20px;
+            right: 20px;
+        }
+    }
+
+    &__copyrightText {
+        display: block;
+        margin: 20px 0 0;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 16px;
+        color: #fff;
+        letter-spacing: 0.1px;
+    }
+
+    &__logo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}

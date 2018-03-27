@@ -1,0 +1,95 @@
+.contentPrimary {
+    position: relative;
+    float: left;
+    padding-right: 15px;
+    padding-bottom: 50px;
+    width: 70%;
+
+
+    &--narrow {
+        width: 60%;
+        max-width: 500px;
+    }
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        float: none;
+        padding-right: 0;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
+    &__textBlock {
+        margin-bottom: 30px;
+
+        &--marginBottomBig {
+            margin-bottom: 90px;
+        }
+
+        & > p:first-child {
+            margin-top: 0;
+        }
+
+        &__subheading {
+            float: right;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 35px;
+        }
+
+        &__img {
+            display: block;
+            margin: 20px auto 50px;
+            max-width: 100%;
+        }
+
+        &__quote {
+            float: left;
+            position: relative;
+            padding: 35px 0;
+            margin-right: 50px;
+            width: 320px;
+            max-width: 60%;
+            font-size: 25px;
+            font-weight: 300;
+            line-height: 32px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 15px;
+                left: 50%;
+                margin-left: -10px;
+                width: 21px;
+                height: 21px;
+                background-image: url(img/quotes-sprite.svg);
+            }
+
+            &::after {
+                @extend .contentPrimary__textBlock__quote::before;
+                top: auto;
+                bottom: 15px;
+                background-position: 0 -20px;
+            }
+
+            &--right {
+                float: right;
+                margin: 0;
+                margin-left: 50px;
+            }
+        }
+    }
+
+    &__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    &__label {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 35px;
+        }
+    }
+}
