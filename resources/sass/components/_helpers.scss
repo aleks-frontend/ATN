@@ -5,7 +5,11 @@
 }
 
 .margin-bottom-small {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+}
+
+.margin-bottom-medium {
+    margin-bottom: 90px;
 }
 
 .padding-bottom-medium {
@@ -14,6 +18,16 @@
 
 .padding-bottom-large {
     padding-bottom: 380px;
+}
+
+// Text Styling Helpers
+
+.is-bigger-text {
+    font-size: 18px;
+}
+
+.is-bold-text {
+    font-weight: 700;
 }
 
 // Background Circles

@@ -53,6 +53,17 @@
         background: rgba($default-color-purple, .8);
     }
 
+    &__innerBigText {
+        position: absolute;
+        left: 20px;
+        bottom: 15px;
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 33px;
+        color: $green-custom;
+        text-transform: uppercase;
+    }
+
     &__headline {
         display: block;
         margin-top: 7px;
@@ -60,6 +71,7 @@
         font-weight: 700;
         color: $default-color-black;
         line-height: 20px;
+        text-align: left;
 
         &--big {
             font-size: 22px;

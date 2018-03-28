@@ -1,0 +1,22 @@
+.keywordSearch {
+    @include prefix(border-radius, 4px, webkit ms);
+    padding: 15px 18px;
+    border: 3px solid $default-color-green;
+
+    &__label {
+        font-size: 15px;
+        font-weight: 700;
+        margin-right: 15px;
+    }
+
+    &__input {
+        @include placeholder-styling {
+            color: $default-color-black;
+            opacity: 0.4;
+        };
+        font-size: 15px;
+        font-weight: 700;
+        border: 0;
+
+    }
+}

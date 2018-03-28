@@ -6053,13 +6053,15 @@ ol {
   .hamburgerMenu:hover {
     cursor: pointer; }
   .hamburgerMenu__bar {
+    -webkit-border-radius: 2.5px;
+    -ms-border-radius: 2.5px;
+    border-radius: 2.5px;
     display: block;
     position: absolute;
     right: 0;
     width: 100%;
     height: 4px;
     background: #fff;
-    border-radius: 2.5px;
     transform-origin: center center;
     transform: rotate(0deg) scale(1, 1);
     transition: all 0.3s ease-in-out; }
@@ -6466,6 +6468,33 @@ ol {
     top: auto;
     left: auto; }
 
+.keywordSearch {
+  -webkit-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  padding: 15px 18px;
+  border: 3px solid #0f0; }
+  .keywordSearch__label {
+    font-size: 15px;
+    font-weight: 700;
+    margin-right: 15px; }
+  .keywordSearch__input {
+    font-size: 15px;
+    font-weight: 700;
+    border: 0; }
+    .keywordSearch__input::-webkit-input-placeholder {
+      color: #000730;
+      opacity: 0.4; }
+    .keywordSearch__input:-moz-placeholder {
+      color: #000730;
+      opacity: 0.4; }
+    .keywordSearch__input::-moz-placeholder {
+      color: #000730;
+      opacity: 0.4; }
+    .keywordSearch__input:-ms-input-placeholder {
+      color: #000730;
+      opacity: 0.4; }
+
 .buttonDefault {
   display: inline-block;
   position: relative;
@@ -6593,6 +6622,9 @@ ol {
   .tooltipTrigger[data-tooltip] {
     position: relative; }
   .tooltipTrigger[data-tooltip]::before {
+    -webkit-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
     content: attr(data-tooltip);
     position: absolute;
     display: none;
@@ -6604,7 +6636,6 @@ ol {
     bottom: 100%;
     left: -10px;
     border: 3px solid #0f0;
-    border-radius: 8px;
     background: #fff;
     text-align: left; }
   .tooltipTrigger[data-tooltip-color='green']::before {
@@ -6695,13 +6726,23 @@ ol {
     background: rgba(0, 255, 0, 0.8); }
   .projectBox:hover .projectBox__overlay--purple {
     background: rgba(144, 19, 254, 0.8); }
+  .projectBox__innerBigText {
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 33px;
+    color: #14ff00;
+    text-transform: uppercase; }
   .projectBox__headline, .projectBox__info {
     display: block;
     margin-top: 7px;
     font-size: 15px;
     font-weight: 700;
     color: #000730;
-    line-height: 20px; }
+    line-height: 20px;
+    text-align: left; }
     .projectBox__headline--big {
       font-size: 22px;
       font-weight: 300; }
@@ -6759,6 +6800,15 @@ ol {
     font-size: 15px;
     font-weight: 700;
     line-height: 35px; }
+
+.loadMore {
+  padding: 70px 0;
+  text-align: center; }
+  .loadMore__label {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 700; }
 
 .footer {
   background-image: linear-gradient(#5b01de, #feb3ff); }
@@ -6856,13 +6906,22 @@ ol {
   margin-top: 0; }
 
 .margin-bottom-small {
-  margin-bottom: 35px; }
+  margin-bottom: 25px; }
+
+.margin-bottom-medium {
+  margin-bottom: 90px; }
 
 .padding-bottom-medium {
   padding-bottom: 110px; }
 
 .padding-bottom-large {
   padding-bottom: 380px; }
+
+.is-bigger-text {
+  font-size: 18px; }
+
+.is-bold-text {
+  font-weight: 700; }
 
 .backgroundCircle {
   position: relative;
@@ -6876,7 +6935,7 @@ ol {
     display: block;
     width: 222px;
     height: 222px;
-    background: #E0A1DB;
+    background: #e0a1db;
     z-index: -1; }
   .backgroundCircle--leftMiddle::after {
     top: 50%;

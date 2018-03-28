@@ -19,6 +19,7 @@
     }
 
     &[data-tooltip]::before {
+        @include prefix(border-radius, 8px, webkit ms);
         content: attr(data-tooltip);
         position: absolute;
         display: none;
@@ -30,7 +31,6 @@
         bottom: 100%;
         left: -10px;
         border: 3px solid $default-color-green;
-        border-radius: 8px;
         background: $default-color-white;
         text-align: left;
     }
