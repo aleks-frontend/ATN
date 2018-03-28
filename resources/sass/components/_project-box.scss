@@ -4,6 +4,11 @@
     width: 283px;
     height: 193px;
 
+    &--small {
+        width: 258px;
+        height: 176px;
+    }
+
     &__bgImage {
         @include prefix(transform, translate(-50%, -50%), webkit ms);
         position: absolute;
@@ -13,7 +18,7 @@
         left: 50%;
     }
 
-    &__description {
+    &__overlay {
         @include prefix(transform, rotate(34deg), webkit ms);
         @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
         position: absolute;
@@ -21,8 +26,8 @@
         bottom: 0;
         padding: 10px 40px 0;
         left: 0;
-        width: 342px;
-        font-size: 12px;
+        width: 122%;
+        font-size: 15px;
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;
@@ -40,17 +45,32 @@
 
     }
 
-    &:hover &__description--green {
+    &:hover &__overlay--green {
         background: rgba($default-color-green, .8);
     }
 
-    &:hover &__description--purple {
+    &:hover &__overlay--purple {
         background: rgba($default-color-purple, .8);
     }
 
-    &--small {
-        width: 258px;
-        height: 176px;
+    &__headline {
+        display: block;
+        margin-top: 7px;
+        font-size: 15px;
+        font-weight: 700;
+        color: $default-color-black;
+        line-height: 20px;
+
+        &--big {
+            font-size: 22px;
+            font-weight: 300;
+        }
+    }
+
+    &__info {
+        @extend .projectBox__headline;
+        margin-top: 0;
+        font-weight: 300;
     }
 
 }
