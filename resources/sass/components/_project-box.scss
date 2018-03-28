@@ -5,15 +5,17 @@
     height: 193px;
 
     &__bgImage {
+        @include prefix(transform, translate(-50%, -50%), webkit ms);
         position: absolute;
         min-width: 100%;
         min-height: 100%;
         top: 50%;
         left: 50%;
-        @include prefix(transform, translate(-50%, -50%), webkit ms);
     }
 
     &__description {
+        @include prefix(transform, rotate(34deg), webkit ms);
+        @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
         position: absolute;
         top: 0;
         bottom: 0;
@@ -25,8 +27,6 @@
         text-align: center;
         text-transform: uppercase;
         transform-origin: top left;
-        @include prefix(transform, rotate(34deg), webkit ms);
-        @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
 
         &--green {
             color: $default-color-black;

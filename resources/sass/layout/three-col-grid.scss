@@ -74,11 +74,11 @@
         }
 
         @media screen and (max-width: $breakpoint-delta) {
+            @include prefix(transform, translateX(-50%), webkit ms);
             padding: 0;
             margin-top: 40px;
-            left: 50% !important; /* Overriding some Isotope custom styling */
+            left: 50% !important; // Overriding some Isotope custom styling
             width: 283px;
-            @include prefix(transform, translateX(-50%), webkit ms);            
         }
     }
 

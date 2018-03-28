@@ -1,4 +1,4 @@
-/* Additional margins and paddings */
+// Additional margins and paddings
 
 .margin-top-zero {
     margin-top: 0;
@@ -16,21 +16,21 @@
     padding-bottom: 380px;
 }
 
-/* Background Circles */
+// Background Circles
 
 .backgroundCircle {
     position: relative;
     overflow: hidden;
 
     &::after {
+        @include prefix(border-radius, 50%, webkit ms);
         content: '';
         position: absolute;
         display: block;
         width: 222px;
         height: 222px;
-        background: #E0A1DB;
+        background: $pink-dark;
         z-index: -1;
-        @include prefix(border-radius, 50%, webkit ms);
     }
 
     &--leftMiddle {
@@ -62,11 +62,11 @@
     }
 }
 
-/* Helper Class for Containing Floated Divs */
-.clearfix:after {
-  content: "."; 
-  display: block; 
-  height: 0; 
-  clear: both; 
-  visibility: hidden;
+// Helper Class for Containing Floated Divs
+.clearfix::after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }

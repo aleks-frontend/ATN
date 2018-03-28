@@ -5,7 +5,7 @@
     width: 635px;
     max-width: 100%;
     height: 45px;
-    background-image: linear-gradient(to right, #5300ff, #eab8ff);
+    background-image: linear-gradient(to right, $purple-dark, $pink-light);
 
     @media screen and (max-width: $breakpoint-alpha) {
         padding-right: 100px;
@@ -16,7 +16,7 @@
         font-size: 15px;
         font-weight: 700;
         line-height: 45px;
-        color: #fff;
+        color: $default-color-white;
 
         &::after {
             content: '|';
@@ -30,17 +30,16 @@
     }
 
     &__emailInput {
+        @include placeholder-styling {
+            color: $default-color-white;
+            opacity: 0.5;
+        }
         height: 45px;
         font-size: 15px;
         font-weight: 700;
-        color: #fff;
-        border: none;
+        color: $default-color-white;
+        border: 0;
         background: transparent;
-
-        @include placeholderStyling {
-            color: #fff;
-            opacity: 0.5;
-        }
     }
 
     &__submitButton {
@@ -59,8 +58,8 @@
             top: 0;
             right: -23px;
             width: 23px;
-            height: 45px; 
-            background-image: url(img/default-button-bg-lg--sprite.png);
+            height: 45px;
+            background-image: url('img/default-button-bg-lg--sprite.png');
             background-repeat: no-repeat;
 
             @media screen and (max-width: $breakpoint-alpha) {
@@ -68,23 +67,23 @@
             }
         }
 
-        & > input[type="submit"] {
+        & > [type='submit'] {
             padding: 0 20px;
             height: 45px;
             font-size: 15px;
             font-weight: 700;
-            color: #fff;
+            color: $default-color-white;
             background: rgba($default-color-green, 0.6);
             border: 3px solid rgba($default-color-green, 0.6);
-            border-right: none;
+            border-right: 0;
             text-transform: uppercase;
-            
+
             &:hover {
                 cursor: pointer;
             }
         }
 
-        &:hover > input[type="submit"] {
+        &:hover > [type='submit'] {
             color: $default-color-green;
             background: transparent;
         }
@@ -92,7 +91,7 @@
         @media screen and (max-width: $breakpoint-alpha) {
             right: 0;
             left: auto;
-            margin-left: 0;     
+            margin-left: 0;
         }
     }
 

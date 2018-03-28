@@ -7,7 +7,7 @@
 
     &__row {
         margin-left: -20px;
-        font-size: 0; /* Fighting the Space Between Inline Block Elements */
+        font-size: 0;
 
         &--separator {
             margin-top: 40px;
@@ -39,6 +39,10 @@
     }
 
     &__inputText {
+        @include placeholder-styling {
+            color: $default-color-black;
+            opacity: 1;
+        }
         display: block;
         padding: 20px;
         width: 100%;
@@ -47,11 +51,6 @@
         font-weight: 700;
         color: $default-color-black;
         border: 3px solid $default-color-black;
-
-        @include placeholderStyling {
-            color: $default-color-black;
-            opacity: 1;
-        }
     }
 
     &__inputTextarea {

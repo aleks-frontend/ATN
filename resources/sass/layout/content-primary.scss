@@ -52,7 +52,7 @@
             font-size: 25px;
             font-weight: 300;
             line-height: 32px;
-            border: none;
+            border: 0;
 
             &::before {
                 content: '';
@@ -63,7 +63,7 @@
                 margin-left: -10px;
                 width: 21px;
                 height: 21px;
-                background-image: url(img/quotes-sprite.svg);
+                background-image: url('img/quotes-sprite.svg');
             }
 
             &::after {
@@ -82,11 +82,11 @@
     }
 
     &__footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
 
-    &__label {
+        &__label {
             display: block;
             font-size: 15px;
             font-weight: 700;

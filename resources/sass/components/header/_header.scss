@@ -1,5 +1,3 @@
-/* Header Styling */
-
 .header {
     position: absolute;
     top: 0;
@@ -28,6 +26,10 @@
             float: left;
 
             &__input {
+                @include placeholder-styling {
+                    color: $default-color-white;
+                    opacity: 0.8;
+                }
                 margin-top: -20px;
                 margin-right: 60px;
                 padding-left: 50px;
@@ -35,20 +37,15 @@
                 height: 53px;
                 font-size: 15px;
                 font-weight: 700;
-                color: #fff;
+                color: $default-color-white;
                 background: transparent url('img/search-bg-sprite.png') no-repeat;
                 background-position: 0 -53px;
-                border: none;
+                border: 0;
                 text-transform: uppercase;
 
                 &:hover,
                 &:focus {
                     background-position: 0 0;
-                }
-
-                @include placeholderStyling {
-                    color: #fff;
-                    opacity: 0.8;
                 }
 
                 @media screen and (max-width: $breakpoint-alpha) {
@@ -61,16 +58,16 @@
                 }
 
                 &--black {
-                    color: #000;
+                    color: $default-color-black;
                     background-position: 0 -179px;
 
                     &:hover,
                     &:focus {
-                        background-position: 0 -126px;                      
+                        background-position: 0 -126px;
                     }
 
-                    @include placeholderStyling {
-                        color: #000;
+                    @include placeholder-styling {
+                        color: $default-color-black;
                     }
                 }
             }

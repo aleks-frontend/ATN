@@ -1,15 +1,14 @@
 .heroSlider {
-
     &__wrapper {
         margin: 0 0 85px;
         width: 100%;
-        max-width: 817px;       
-        max-height: 422px; /* Temporary solution for hiding the slides before the bxSlider is loaded  */
-        overflow: hidden; /* Temporary solution for hiding the slides before the bxSlider is loaded  */
+        max-width: 817px;
+        max-height: 422px; // Temporary solution for hiding the slides before the bxSlider is loaded  */
+        overflow: hidden; // Temporary solution for hiding the slides before the bxSlider is loaded  */
 
         & > .bx-wrapper {
             box-shadow: none;
-            border: none;
+            border: 0;
             padding: 0;
             margin: 0;
 
@@ -17,8 +16,12 @@
                 margin-top: -11px;
                 width: 22px;
                 height: 22px;
-                background: url(img/arrow-button-sprite.png) no-repeat;
-                
+                background: url('img/arrow-button-sprite.png') no-repeat;
+
+                @media screen and (max-width: $breakpoint-alpha) {
+                    display: none;
+                }
+
                 &.bx-prev {
                     left: -66px;
                     background-position: 0 -22px;
@@ -34,10 +37,10 @@
                 bottom: 40px;
 
                 &.bx-default-pager a {
-                    background: #fff;
+                    background: $default-color-white;
 
-                    &:hover, 
-                    &.active, 
+                    &:hover,
+                    &.active,
                     &:focus {
                         background: $default-color-green;
                     }

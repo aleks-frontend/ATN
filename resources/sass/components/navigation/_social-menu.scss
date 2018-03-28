@@ -31,7 +31,7 @@
         display: block;
         width: 19px;
         height: 16px;
-        background-image: url(img/social-icons-sprite.svg);
+        background-image: url('img/social-icons-sprite.svg');
 
         &--twitter {
             background-position: 0 0;
@@ -59,15 +59,15 @@
     }
 }
 
-/* Social Menu - Large - As a separate block (extended .socialMenu) */
+// Social Menu - Large - As a separate block (extended .socialMenu)
 .socialMenuLarge {
     @extend .socialMenu;
-    
+
     &__icon {
         @extend .socialMenu__icon;
         width: 34px;
         height: 29px;
-        background-image: url(img/social-icons-sprite-large.svg);
+        background-image: url('img/social-icons-sprite-large.svg');
 
         &--twitter {
             background-position: 0 0;

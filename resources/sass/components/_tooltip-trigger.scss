@@ -31,15 +31,15 @@
         left: -10px;
         border: 3px solid $default-color-green;
         border-radius: 8px;
-        background: #fff;
+        background: $default-color-white;
         text-align: left;
     }
 
-    &[data-tooltip-color="green"]::before {
+    &[data-tooltip-color='green']::before {
         border-color: $default-color-green;
     }
 
-    &[data-tooltip-color="purple"]::before {
+    &[data-tooltip-color='purple']::before {
         border-color: $default-color-purple;
     }
 

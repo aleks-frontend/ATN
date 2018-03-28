@@ -1,7 +1,7 @@
 .mainNavigation {
+    @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
     float: left;
     padding: 40px;
-    @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);    
 
     @media screen and (max-width: $breakpoint-gamma) {
         position: fixed;
@@ -10,7 +10,7 @@
         left: 100%;
         right: 0;
         padding: 55px 33px 0;
-        background-image: linear-gradient(to bottom, #914afe, #3408b9);
+        background-image: linear-gradient(to bottom, $purple-light, $purple-darker);
     }
 
     &.is-scrolled-in {
@@ -21,7 +21,7 @@
         margin-left: -25px;
         font-size: 0;
 
-        @media screen and (max-width: $breakpoint-alpha) { 
+        @media screen and (max-width: $breakpoint-alpha) {
             margin-left: -15px;
         }
 
@@ -46,24 +46,24 @@
         }
 
         &__button {
+            @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
             font-size: 15px;
             font-weight: 700;
-            color: #fff;
+            color: $default-color-white;
             text-decoration: none;
             text-transform: uppercase;
-            @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
 
             &:hover {
                 color: $default-color-green;
             }
 
             &--black {
-                color: #000;
+                color: $default-color-black;
             }
 
             @media screen and (max-width: $breakpoint-alpha) {
                 font-size: 12px;
-            }           
+            }
 
             @media screen and (max-width: $breakpoint-gamma) {
                 font-size: 24px;
@@ -95,23 +95,23 @@
             }
 
             &__button {
+                @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
                 font-size: 15px;
                 font-weight: 700;
-                color: #fff;
+                color: $default-color-white;
                 text-decoration: none;
                 opacity: 0.6;
-                @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
 
                 &:hover {
                     opacity: 1;
-                }           
+                }
 
                 @media screen and (max-width: $breakpoint-gamma) {
                     font-size: 24px;
                 }
 
                 &--black {
-                    color: #000;
+                    color: $default-color-black;
                 }
             }
         }

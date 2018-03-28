@@ -21,12 +21,12 @@
         display: block;
         margin-bottom: 10px;
 
-        & > a {         
+        & > a {
+            @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
             font-size: 15px;
             font-weight: 700;
-            color: #fff;
+            color: $default-color-white;
             text-decoration: none;
-            @include prefix(transition, 0.3s all ease-in-out 0s, webkit ms);
 
             &:hover {
                 opacity: 0.4;

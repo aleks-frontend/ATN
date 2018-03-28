@@ -4,13 +4,13 @@
     @each $prefix in $prefixes {
         #{'-' + $prefix + '-' + $property}: $value;
     }
- 
+
     #{$property}: $value;
 }
 
-@mixin placeholderStyling {
+@mixin placeholder-styling {
     &::-webkit-input-placeholder {@content}
     &:-moz-placeholder           {@content}
     &::-moz-placeholder          {@content}
-    &:-ms-input-placeholder      {@content}  
+    &:-ms-input-placeholder      {@content}
 }
