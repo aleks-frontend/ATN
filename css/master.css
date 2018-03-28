@@ -6624,6 +6624,15 @@ ul, ol {
       .storesMenu__item__button--appStore {
         background: url(img/stores-button-app-store.png) no-repeat center; }
 
+.shareEvent {
+  position: absolute;
+  bottom: 0; }
+  .shareEvent__label {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 35px; }
+
 .footer {
   background-image: linear-gradient(#5b01de, #feb3ff); }
   .footer__container {
@@ -6721,6 +6730,9 @@ ul, ol {
 .margin-top-zero {
   margin-top: 0; }
 
+.margin-bottom-small {
+  margin-bottom: 35px; }
+
 .padding-bottom-medium {
   padding-bottom: 110px; }
 
@@ -6738,12 +6750,16 @@ ul, ol {
     width: 222px;
     height: 222px;
     background: #E0A1DB;
+    z-index: -1;
     -webkit-border-radius: 50%;
     -ms-border-radius: 50%;
     border-radius: 50%; }
-  .backgroundCircle--middleLeft::after {
+  .backgroundCircle--leftMiddle::after {
     top: 50%;
     left: -56px; }
+  .backgroundCircle--rightTop::after {
+    top: 10px;
+    right: -159px; }
   .backgroundCircle--bottomLeftDeep::after {
     bottom: -170px;
     left: 48px; }
@@ -6809,7 +6825,8 @@ ul, ol {
       max-width: 60%;
       font-size: 25px;
       font-weight: 300;
-      line-height: 32px; }
+      line-height: 32px;
+      border: none; }
       .contentPrimary__textBlock__quote::before, .contentPrimary__textBlock__quote::after {
         content: '';
         position: absolute;

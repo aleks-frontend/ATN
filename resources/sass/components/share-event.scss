@@ -1,0 +1,11 @@
+.shareEvent {
+    position: absolute;
+    bottom: 0;
+
+    &__label {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 35px;
+    }
+}
