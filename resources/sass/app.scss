@@ -26,6 +26,7 @@
 @import 'components/map-container';
 @import 'components/partners';
 @import 'components/blog-box';
+@import 'components/map-icons';
 @import 'components/stores-menu';
 @import 'components/share-event';
 @import 'components/load-more';
@@ -35,6 +36,8 @@
 // Layout
 @import 'layout/manifest';
 
-.container {
-    max-width: 890px;
+.gm-style .gm-style-iw {
+    width: 350px !important;
+    top: 0 !important;
+    left: 0 !important;
 }

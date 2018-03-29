@@ -38,3 +38,8 @@ ul,
 ol {
     margin-bottom: 0;
 }
+
+// Overriding the Bootstrap container default max-width
+.container {
+    max-width: 890px;
+}
