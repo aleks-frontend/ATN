@@ -43,6 +43,11 @@
             background: rgba($default-color-purple, .6);
         }
 
+        &--pink {
+            color: $purple-darker3;
+            background: rgba($pink-dark, 1);
+        }
+
     }
 
     &:hover &__overlay--green {
@@ -62,6 +67,10 @@
         line-height: 33px;
         color: $green-custom;
         text-transform: uppercase;
+
+        &--purple {
+            color: $purple-darker3;
+        }
     }
 
     &__headline {

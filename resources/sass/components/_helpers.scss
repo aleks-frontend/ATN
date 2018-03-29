@@ -49,6 +49,7 @@
 
     &--leftMiddle {
         &::after {
+            @include prefix(transform, translateY(-50%), webkit);
             top: 50%;
             left: -56px;
         }
@@ -61,19 +62,35 @@
         }
     }
 
+    &--rightMiddle {
+        &::after {
+            @include prefix(transform, translateY(-50%), webkit);
+            top: 50%;
+            right: -159px;
+        }
+    }
+
+    &--bottomLeft {
+        &::after {
+            bottom: -90px;
+            left: 51px;
+        }
+    }
+
     &--bottomLeftDeep {
+        &::after {
+            bottom: -150px;
+            left: 48px;
+        }
+    }
+
+    &--bottomLeftDeeper {
         &::after {
             bottom: -170px;
             left: 48px;
         }
     }
 
-    &--bottomLeft {
-        &::after {
-            bottom: -150px;
-            left: 51px;
-        }
-    }
 }
 
 // Helper Class for Containing Floated Divs
