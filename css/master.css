@@ -6813,6 +6813,7 @@ ol {
     margin-bottom: 25px; }
   .blogBox__textContent {
     display: -webkit-box;
+    overflow: hidden;
     margin-bottom: 15px;
     height: 55px;
     -webkit-line-clamp: 3;
