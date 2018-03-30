@@ -5970,6 +5970,7 @@ ol {
   margin-bottom: 0; }
 
 .container {
+  padding-bottom: 1rem;
   max-width: 890px; }
 
 .header {
@@ -7076,17 +7077,6 @@ ol {
   clear: both;
   visibility: hidden; }
 
-.layoutContainer {
-  position: relative;
-  margin: 0 auto 100px;
-  padding: 0 90px;
-  width: 1024px;
-  max-width: 100%;
-  z-index: 1; }
-  @media screen and (max-width: 1024px) {
-    .layoutContainer {
-      padding: 0 20px; } }
-
 .contentPrimary {
   position: relative;
   float: left;
@@ -7151,35 +7141,6 @@ ol {
     bottom: 0;
     left: 0; }
     .contentPrimary__footer__label {
-      display: block;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 35px; }
-
-.sidebarPrimary {
-  float: left;
-  position: relative;
-  padding-bottom: 20px;
-  padding-right: 80px;
-  width: 30%; }
-  .sidebarPrimary--wide {
-    width: 40%; }
-  .sidebarPrimary--hasFixedFooter {
-    padding-bottom: 200px; }
-  @media screen and (max-width: 768px) {
-    .sidebarPrimary {
-      float: none;
-      padding-right: 0;
-      padding-bottom: 50px;
-      width: 100%; } }
-  .sidebarPrimary__footer {
-    position: absolute;
-    bottom: 0;
-    left: 0; }
-    @media screen and (max-width: 768px) {
-      .sidebarPrimary__footer {
-        position: relative; } }
-    .sidebarPrimary__footer__label {
       display: block;
       font-size: 15px;
       font-weight: 700;
