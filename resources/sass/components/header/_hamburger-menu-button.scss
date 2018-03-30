@@ -41,6 +41,12 @@
         &--black {
             background: $default-color-black;
         }
+
+        &--whiteOnMobile {
+            @media screen and (max-width: $breakpoint-gamma) {
+                background: $default-color-white;
+            }
+        }
     }
 
     &:hover &__bar:nth-child(2) {

@@ -1,6 +1,11 @@
 .shareEvent {
     position: absolute;
-    bottom: 0;
+    bottom: 1rem;
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        position: relative;
+        bottom: auto;
+    }
 
     &__label {
         display: block;

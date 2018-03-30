@@ -1,3 +1,24 @@
+.is-hidden-on-mobile {
+    @media screen and (max-width: $breakpoint-gamma) {
+        display: none;
+    }
+}
+
+.is-visible-on-mobile {
+    display: none;
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        display: block;
+    }
+}
+
+.is-white-on-mobile {
+    @media screen and (max-width: $breakpoint-gamma) {
+        color: $default-color-white;
+    }
+}
+
+
 // Additional margins and paddings
 
 .margin-top-zero {
@@ -26,10 +47,18 @@
 
 .padding-bottom-medium {
     padding-bottom: 110px;
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        padding-bottom: 50px;
+    }
 }
 
 .padding-bottom-large {
     padding-bottom: 380px;
+
+    @media screen and (max-width: $breakpoint-gamma) {
+        padding-bottom: 100px;
+    }
 }
 
 // Text Styling Helpers

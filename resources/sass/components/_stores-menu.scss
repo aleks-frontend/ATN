@@ -3,6 +3,22 @@
     margin-top: -4px;
     font-size: 0;
     text-align: right;
+    clear: right;
+
+    &__label {
+        float: right;
+        margin: 50px 0 0;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 22px;
+        color: $default-color-white;
+        text-align: right;
+        clear: right;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            display: none;
+        }
+    }
 
     &--pullRight {
         float: right;
@@ -21,11 +37,18 @@
         display: inline-block;
         margin-top: 19px;
         padding-left: 19px;
+        width: 50%;
+
+        @media screen and (min-width: $breakpoint-gamma) {
+            max-width: 152px;
+        }
 
         &__button {
             display: block;
-            width: 133px;
+            width: 100%;
             height: 45px;
+            border: 2px solid $default-color-white;
+            border-radius: 6px;
 
             &--googlePlay {
                 background: url('img/stores-button-google.png') no-repeat center;

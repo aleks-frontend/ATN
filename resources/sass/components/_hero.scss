@@ -4,80 +4,80 @@
     min-height: 599px;
     background: url('img/hero-bg.jpg') no-repeat center bottom;
     background-size: cover;
-}
 
-.hero__comingSoonBanner {
-    font-size: 15px;
-    font-weight: 700;
-    color: $default-color-white;
-    text-align: center;
-    text-transform: uppercase;
+    &__comingSoonBanner {
+        font-size: 15px;
+        font-weight: 700;
+        color: $default-color-white;
+        text-align: center;
+        text-transform: uppercase;
 
-    @media screen and (max-width: $breakpoint-delta) {
-        margin-top: 20px;
-    }
-}
-
-.hero__mainBanner {
-    @include prefix(transform, translate(-50%, -50%) rotate(15deg), webkit ms);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    max-width: 90%;
-
-    @media screen and (max-width: $breakpoint-delta) {
-        @include prefix(transform, translate(-50%, -50%) rotate(0deg), webkit ms);
+        @media screen and (max-width: $breakpoint-delta) {
+            margin-top: 20px;
+        }
     }
 
-    &__row {
-        padding: 7px 0;
+    &__mainBanner {
+        @include prefix(transform, translate(-50%, -50%) rotate(15deg), webkit ms);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 350px;
+        max-width: 90%;
 
-        & > img {
-            display: inline-block;
-            margin-right: -7px;
-            vertical-align: bottom;
+        @media screen and (max-width: $breakpoint-delta) {
+            @include prefix(transform, translate(-50%, -50%) rotate(0deg), webkit ms);
         }
 
+        &__row {
+            padding: 7px 0;
+
+            & > img {
+                display: inline-block;
+                margin-right: -7px;
+                vertical-align: bottom;
+            }
+
+            & > ul {
+                display: inline-block;
+                margin-top: -5px;
+                text-align: left;
+
+                & > li {
+                    display: block;
+                    margin-top: 5px;
+                    color: $default-color-white;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 1em;
+                    text-transform: uppercase;
+                }
+            }
+
+            &--alignRight {
+                text-align: right;
+            }
+
+            &__arrowWrapper {
+                display: inline-block;
+                padding: 28px 47px;
+            }
+        }
+    }
+
+    &__credits {
+        position: absolute;
+        bottom: 0;
+        right: 61px;
+
         & > ul {
-            display: inline-block;
             margin-top: -5px;
-            text-align: left;
+            font-size: 0;
 
             & > li {
                 display: block;
                 margin-top: 5px;
-                color: $default-color-white;
-                font-size: 16px;
-                font-weight: 700;
-                line-height: 1em;
-                text-transform: uppercase;
             }
-        }
-
-        &--alignRight {
-            text-align: right;
-        }
-
-        &__arrowWrapper {
-            display: inline-block;
-            padding: 28px 47px;
-        }
-    }
-}
-
-.hero__credits {
-    position: absolute;
-    bottom: 0;
-    right: 61px;
-
-    & > ul {
-        margin-top: -5px;
-        font-size: 0;
-
-        & > li {
-            display: block;
-            margin-top: 5px;
         }
     }
 }

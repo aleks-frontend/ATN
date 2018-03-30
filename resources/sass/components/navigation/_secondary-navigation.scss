@@ -1,4 +1,5 @@
 .secondaryNavigation {
+    position: relative;
     float: left;
     margin-left: -35px;
 
@@ -6,6 +7,7 @@
         float: none;
         overflow: hidden;
         margin-bottom: 50px;
+        padding-right: 30px;
     }
 
     & > ul {

@@ -4,6 +4,10 @@
     width: 283px;
     height: 193px;
 
+    @media screen and (max-width: $breakpoint-gamma) {
+        margin: 0 auto;
+    }
+
     &--small {
         width: 258px;
         height: 176px;
@@ -85,6 +89,10 @@
         &--big {
             font-size: 22px;
             font-weight: 300;
+        }
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            text-align: center;
         }
     }
 

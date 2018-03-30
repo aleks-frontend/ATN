@@ -10,6 +10,10 @@
         margin: 0 auto 70px;
         width: 1024px;
         max-width: 100%;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            margin-bottom: 0;
+        }
     }
 
     &__utilities {

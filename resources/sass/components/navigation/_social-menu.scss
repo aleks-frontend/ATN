@@ -17,13 +17,47 @@
         right: 20px;
     }
 
+    &--absoluteTopRight {
+        position: absolute;
+        float: none;
+        top: 10px;
+        right: 0;
+    }
+
     & > ul {
         margin-left: -10px;
         font-size: 0;
 
-        & > li {
+        @media screen and (max-width: $breakpoint-gamma) {
+            margin-left: 0;
+        }
+    }
+
+
+    &__item {
+        display: inline-block;
+        margin-left: 10px;
+
+        @media screen and (max-width: $breakpoint-gamma) {
+            display: block;
+            margin: 0 0 10px;
+        }
+
+        &--remainSingleLine {
+            @media screen and (max-width: $breakpoint-gamma) {
+                display: inline-block;
+                margin-left: 10px;
+            }
+
+            &:first-child {
+                @media screen and (max-width: $breakpoint-gamma) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        & > a {
             display: inline-block;
-            margin-left: 10px;
         }
     }
 
@@ -55,6 +89,24 @@
 
         &--instagramBlack {
             background-position: -19px -34px;
+        }
+
+        &--twitterWhiteOnMobile {
+            @media screen and (max-width: $breakpoint-gamma) {
+                background-position: 0 0;
+            }
+        }
+
+        &--facebookWhiteOnMobile {
+            @media screen and (max-width: $breakpoint-gamma) {
+                background-position: 0 -17px;
+            }
+        }
+
+        &--instagramWhiteOnMobile {
+            @media screen and (max-width: $breakpoint-gamma) {
+                background-position: 0 -34px;
+            }
         }
     }
 }
